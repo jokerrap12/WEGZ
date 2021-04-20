@@ -1,20 +1,20 @@
 --[[
 
-│تم تطوير وبرمجة السورس من قبل سونيك .
-│@uu_iv
+│تم تطوير وبرمجة السورس من قبل أحمد .
+│@ahmedyad200
 #-------------------------------------------------------------------
 ]]
 
-local function bassela(msg,MsgText)
+local function basselnder(msg,MsgText)
 if msg.type ~= "pv" then
 if MsgText[1] == "زخرفه" then
-redis:setex(max..":basselNow:"..msg.sender_user_id_,500,true)
+redis:setex(selnder..":basselNow:"..msg.sender_user_id_,500,true)
 sendMsg(msg.chat_id_,msg.id_,"| حسننا , الان يمكنك ارسال الاسم ولبعض الرموز المميزه اكتب رموز")    
 return false
 end
 
-if redis:get(max..":basselNow:"..msg.sender_user_id_) then
-redis:del(max..":basselNow:"..msg.sender_user_id_)
+if redis:get(selnder..":basselNow:"..msg.sender_user_id_) then
+redis:del(selnder..":basselNow:"..msg.sender_user_id_)
 if utf8.len(msg.text) > 300 then
 sendMsg(msg.chat_id_,msg.id_,"| لا يمكنك زخرفه اكثر من 20 حرف \n| ارسل امر زخرفه وحاول مجددا بحروف اقل")    
 return false
@@ -23,18 +23,7 @@ sendMsg(msg.chat_id_,msg.id_,"| لا يمكن زخرفه نص يحتوي على 
 return false
 end
 local EmojeS = {
-' 𓁻',
-' 𓏴  ',
-' 𓏶 ',
-' 𓏡',
-' 𓏢', 
-' 𓏣', 
-' ☽‘',
-' 𖠱²²', 
-'▽', 
-' 𖡛“', 
-' 𖡚℡', 
-' 𖡨', 
+'𖥂','𖥀','𖤼','𖤹','𖤸','𖤷','𖤶','𖤭','𖤫','𖤪','𖤨','𖤧','𖤥','𖤤','𖤣','𖤢','𖤡','𖤟','𖤞','𖤝','𖤜','𖤛','𖤚','𖤘','𖤙','𖤗','𖤕','𖤓','𖤒'
 }
 
 local Emoje = {
@@ -841,7 +830,7 @@ bassel9= bassel9:gsub('m','𝕄')
 bassel9= bassel9:gsub('M','𝕄')
 
 
-local Text_bassela = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
+local Text_basselnder = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
 .."`\n\n2- `"..bassel2..EmojeS[math.random(#EmojeS)]
 .."`\n\n3- `"..bassel3..EmojeS[math.random(#EmojeS)]
 .."`\n\n4- `"..bassel4..EmojeS[math.random(#EmojeS)]
@@ -851,8 +840,8 @@ local Text_bassela = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
 .."`\n\n8- `"..bassel8..Emoje[math.random(#Emoje)]
 .."`\n\n9- `"..bassel9..Emoje[math.random(#Emoje)]
 .."`\n\n10- `"..bassel5..Emoje[math.random(#Emoje)]
-Text_bassela = Text_bassela.."`\n\n اضغط علـي الاسـم ليـتم النـسخ \n★"
-sendMsg(msg.chat_id_,msg.id_,Text_bassela)
+Text_basselnder = Text_basselnder.."`\n\n اضغط علـي الاسـم ليـتم النـسخ \n★"
+sendMsg(msg.chat_id_,msg.id_,Text_basselnder)
 return false
 end
 end
@@ -860,26 +849,15 @@ end
 end
 local function TextRes(msg)
 
-if msg.text and msg.type ~= "pv" and redis:get(max..":basselNow:"..msg.sender_user_id_) then
+if msg.text and msg.type ~= "pv" and redis:get(selnder..":basselNow:"..msg.sender_user_id_) then
 Text = msg.text
-redis:del(max..":basselNow:"..msg.sender_user_id_)
+redis:del(selnder..":basselNow:"..msg.sender_user_id_)
 if utf8.len(msg.text) > 300 then
 sendMsg(msg.chat_id_,msg.id_," لا يمكنك زخرفه اكثر من 300 حرف \n  ارسل امر زخرفه وحاول مجددا بحروف اقل")    
 return false
 end
 local EmojeS = {
-' 𓁻',
-' 𓏴  ',
-' 𓏶 ',
-' 𓏡',
-' 𓏢', 
-' 𓏣', 
-' ☽‘',
-' 𖠱²²', 
-'▽', 
-' 𖡛“', 
-' 𖡚℡', 
-' 𖡨', 
+'𖠀','𖠁','𖠂','𖠅','𖠆','𖠇','𖠈','𖠉','𖠍','𖠎','𖠏','𖠐','𖠑','𖠒','𖠓','𖠔','𖠕','𖠖'
 }
 
 local Emoje = {
@@ -1686,7 +1664,7 @@ bassel9= bassel9:gsub('m','𝕄')
 bassel9= bassel9:gsub('M','𝕄')
 
 
-local Text_bassela = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
+local Text_basselnder = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
 .."`\n\n2- `"..bassel2..EmojeS[math.random(#EmojeS)]
 .."`\n\n3- `"..bassel3..EmojeS[math.random(#EmojeS)]
 .."`\n\n4- `"..bassel4..EmojeS[math.random(#EmojeS)]
@@ -1696,8 +1674,8 @@ local Text_bassela = "1- `"..bassel..EmojeS[math.random(#EmojeS)]
 .."`\n\n8- `"..bassel8..Emoje[math.random(#Emoje)]
 .."`\n\n9- `"..bassel9..Emoje[math.random(#Emoje)]
 .."`\n\n10- `"..bassel5..Emoje[math.random(#Emoje)]
-Text_bassela = Text_bassela.."`\n\n| اضغـط علـي الاسـم ليتـم النـسخ  \n★"
-sendMsg(msg.chat_id_,msg.id_,Text_bassela)
+Text_basselnder = Text_basselnder.."`\n\n| اضغـط علـي الاسـم ليتـم النـسخ  \n★"
+sendMsg(msg.chat_id_,msg.id_,Text_basselnder)
 return false
 end
 
@@ -1706,18 +1684,18 @@ end
 end
 
 return {
-max = {
+selnder = {
 "^(زخرفه)$"
  },
- imax = bassela,
- dmax = TextRes,
+ iselnder = basselnder,
+ dselnder = TextRes,
  }
  
  
 
 --[[
-███████▀ │max ﹏ @UU_IV
-│تم تطوير وبرمجة السورس من قبل سونيك .
-│@soonicxx
+████
+│تم تطوير وبرمجة السورس من قبل أحمد .
+│@ahmedyad200
 #-------------------------------------------------------------------
 ]]
