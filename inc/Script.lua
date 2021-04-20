@@ -8,19 +8,19 @@ function download_to_file(url, file_name)
   -- uncomment if needed
   local respwegz = {}
   local options = {
-  url = url,
-  sink = ltn12.sink.table(respwegz),
-  redirect = true
+    url = url,
+    sink = ltn12.sink.table(respwegz),
+    redirect = true
   }
 
   -- nil, code, headers, status
   local response = nil
 
   if url:starts('https') then
-  options.redirect = false
-  response = {https.request(options)}
+    options.redirect = false
+    response = {https.request(options)}
   else
-  response = {http.request(options)}
+    response = {http.request(options)}
   end
 
   local code = response[2]
@@ -412,7 +412,7 @@ return sendMsg(msg.chat_id_,msg.id_,'𖡨 المعرف غير صحيح \n')
 end   
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 return sendMsg(msg.chat_id_,msg.id_,'𖡨 هاذا معرف قناة \n')   
-end    
+end      
 Get_Info(msg,msg.chat_id_,result.id_)
 end  
 tdcli_function ({ID = "SearchPublicChat",username_ = username},prom_username,nil) 
@@ -436,7 +436,7 @@ if Json_Info.result.can_restrict_members == true then
 restrict = 'ꪜ' else restrict = '✘' end
 if Json_Info.result.can_promote_members == true then
 promote = 'ꪜ' else promote = '✘' end 
-return sendMsg(msg.chat_id_,msg.id_,'\n𖡨 اهلا عزيزي البوت هنا ادمن بالقروب \n𖡨 وصلاحياته هي  \nــــــــــــــــــــــــــــــــ𖡨𝗪𝗘𝗚𝗭𖡨ـــــــــــــــــــــــــ\n𖡨 تغير معلومات المجموعه  ❪ '..info..' ❫\n𖡨 حذف الرسائل 𖡨 ❪ '..delete..' ❫\n𖡨 حظر المستخدمين 𖡨 ❪ '..restrict..' ❫\n𖡨 دعوة مستخدمين 𖡨 ❪ '..invite..' ❫\n𖡨 تثبيت الرسائل 𖡨 ❪ '..pin..' ❫\n𖡨 اضافة مشرفين جدد 𖡨 ❪ '..promote..' ❫\n\n𖡨 ملاحضه » علامة ❪  ꪜ ❫ تعني لديه الصلاحية وعلامة ❪ ✘ ❫ تعني ليس ليديه الصلاحيه')   
+return sendMsg(msg.chat_id_,msg.id_,'\n𖡨 اهلا عزيزي البوت هنا ادمن بالقروب \n𖡨 وصلاحياته هي ↓ \nــــــــــــــــــــــــــــــــ𖡨𝗪𝗘𝗚𝗭𖡨ـــــــــــــــــــــــــ\n𖡨 تغير معلومات المجموعه  ❪ '..info..' ❫\n𖡨 حذف الرسائل 𖡨 ❪ '..delete..' ❫\n𖡨 حظر المستخدمين 𖡨 ❪ '..restrict..' ❫\n𖡨 دعوة مستخدمين 𖡨 ❪ '..invite..' ❫\n𖡨 تثبيت الرسائل 𖡨 ❪ '..pin..' ❫\n𖡨 اضافة مشرفين جدد 𖡨 ❪ '..promote..' ❫\n\n𖡨 ملاحضه » علامة ❪  ꪜ ❫ تعني لديه الصلاحية وعلامة ❪ ✘ ❫ تعني ليس ليديه الصلاحيه')   
 end
 end
 end
@@ -457,7 +457,7 @@ if data.ID == "Ok" then
 redis:set(wegz..":MsgIDPin:"..msg.chat_id_,msg.reply_id)
 return sendMsg(msg.chat_id_,msg.id_,"𖡨 أهلا عزيزي "..msg.TheRankCmd.." \n𖡨 تم تثبيت الرساله \n")
 elseif data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 عذرا لا يمكنني التثبيت .\n𖡨 لست مشرف او لا املك صلاحيه التثبيت \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 عذرا لا يمكنني التثبيت .\n𖡨 لست مشرف او لا املك صلاحيه التثبيت \n')    
 end
 end,nil)
 end
@@ -473,11 +473,11 @@ local GroupID = msg.chat_id_:gsub('-100','')
 tdcli_function({ID="UnpinChannelMessage",channel_id_ = GroupID},
 function(arg,data) 
 if data.ID == "Ok" then
-return sendMsg(msg.chat_id_,msg.id_,"𖡨أهلا عزيزي "..msg.TheRankCmd.."  \n𖡨 تم الغاء تثبيت الرساله \n")  
+return sendMsg(msg.chat_id_,msg.id_,"𖡨أهلا عزيزي "..msg.TheRankCmd.."  \n𖡨 تم الغاء تثبيت الرساله \n")    
 elseif data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨  عذرا لا يمكنني الغاء التثبيت .\n𖡨 لست مشرف او لا املك صلاحيه التثبيت \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨  عذرا لا يمكنني الغاء التثبيت .\n𖡨 لست مشرف او لا املك صلاحيه التثبيت \n')    
 elseif data.ID == "Error" and data.code_ == 400 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 عذرا عزيزي '..msg.TheRankCmd..' .\n𖡨 لا توجد رساله مثبته لاقوم بازالتها \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 عذرا عزيزي '..msg.TheRankCmd..' .\n𖡨 لا توجد رساله مثبته لاقوم بازالتها \n')    
 end
 end,nil)
 end
@@ -706,7 +706,7 @@ redis:del(wegz..'owners:'..msg.chat_id_)
 local MMEZEN = redis:scard(wegz..'whitelist:'..msg.chat_id_)
 redis:del(wegz..'whitelist:'..msg.chat_id_)
 
-return "𖡨 أهلا عزيزي "..msg.TheRankCmd.." \n𖡨 تم تنزيل ❴ "..Admins.." ❵ من الادمنيه\n𖡨 تم تنزيل ❴ "..NumMDER.." ❵ من المدراء\n𖡨 تم تنزيل ❴ "..MMEZEN.." ❵ من المميزين\n\n𖡨 تم تـنـزيـل الـكـل بـنـجـاح\n" 
+return "𖡨 أهلا عزيزي "..msg.TheRankCmd.." ↓\n𖡨 تم تنزيل ❴ "..Admins.." ❵ من الادمنيه\n𖡨 تم تنزيل ❴ "..NumMDER.." ❵ من المدراء\n𖡨 تم تنزيل ❴ "..MMEZEN.." ❵ من المميزين\n\n𖡨 تم تـنـزيـل الـكـل بـنـجـاح\n" 
 end
 
 
@@ -721,7 +721,7 @@ if MsgText[2] == "الفيديو بالتقييد"  then return tqeed_video(msg)
 if MsgText[2] == "المتحركه بالتقييد" then return tqeed_gif(msg) end
 if MsgText[2] == "التوجيه بالتقييد"  then return tqeed_fwd(msg) end
 if MsgText[2] == "الروابط بالتقييد"  then return tqeed_link(msg) end
-if MsgText[2] == "الدردشه"  	   then return mute_text(msg) end
+if MsgText[2] == "الدردشه"    	     then return mute_text(msg) end
 if MsgText[2] == "المتحركه" 		 then return mute_gif(msg) end
 if MsgText[2] == "الصور" 			 then return mute_photo(msg) end
 if MsgText[2] == "الفيديو"			 then return mute_video(msg) end
@@ -1206,7 +1206,7 @@ if redis:get(wegz.."getidstatus"..msg.chat_id_) == "Photo" then
 		}
 		ssssys = ali[math.random(#ali)]
 		if not redis:get("KLISH:ID") then
-		sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,'⌔ ♡𝙽𝙰𝙼𝙴 𖡨  '..Namei..'   \n⌔𖡨 𝚄𝚂𝙴𝚁𖡨'..UserNameID..' .\n⌔♡ 𝙼𝚂𝙶𝙴𖡨'..msgs..' .\n⌔𖡨 𝚂𝚃𝙰 𖡨'..msg.TheRank..' .\n𖤏 𝙸𝙳 ࿖ '..msg.sender_user_id_..' \n⚘ 𝚌𝚑 𖠪 @@SOURCEwegz .',dl_cb,nil)
+		sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,'⌔ ♡𝙽𝙰𝙼𝙴 𖡨  '..Namei..'     \n⌔𖡨 𝚄𝚂𝙴𝚁𖡨'..UserNameID..' .\n⌔♡ 𝙼𝚂𝙶𝙴𖡨'..msgs..' .\n⌔𖡨 𝚂𝚃𝙰 𖡨'..msg.TheRank..' .\n𖤏 𝙸𝙳 ࿖ '..msg.sender_user_id_..' \n⚘ 𝚌𝚑 𖠪 @@SOURCEwegz .',dl_cb,nil)
 		else
 		Text = redis:get("KLISH:ID")
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
@@ -1221,7 +1221,7 @@ if redis:get(wegz.."getidstatus"..msg.chat_id_) == "Photo" then
 		end
 	else
 		if not redis:get("KLISH:ID") then
-		sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني عرض صورتك لانك قمت بحظر البوت او انك لاتملك صوره في بروفيلك ...!\n︙⌔𖡨 𝚄𝚂𝙴𝚁𖡨'..UserNameID..' .\n︙⌔ ♡𝙽𝙰𝙼𝙴 𖡨  '..Namei..'   \n︙⌔♡ 𝙼𝚂𝙶𝙴𖡨'..msgs..' .\n︙⌔𖡨 𝚂𝚃𝙰 𖡨'..msg.TheRank..' .\n𖤏 𝙸𝙳 ࿖ '..msg.sender_user_id_..' \n⚘ 𝚌𝚑 𖠪 @@SOURCEwegz .')
+		sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني عرض صورتك لانك قمت بحظر البوت او انك لاتملك صوره في بروفيلك ...!\n︙⌔𖡨 𝚄𝚂𝙴𝚁𖡨'..UserNameID..' .\n︙⌔ ♡𝙽𝙰𝙼𝙴 𖡨  '..Namei..'     \n︙⌔♡ 𝙼𝚂𝙶𝙴𖡨'..msgs..' .\n︙⌔𖡨 𝚂𝚃𝙰 𖡨'..msg.TheRank..' .\n𖤏 𝙸𝙳 ࿖ '..msg.sender_user_id_..' \n⚘ 𝚌𝚑 𖠪 @@SOURCEwegz .')
 		else
 		Text = redis:get("KLISH:ID")
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
@@ -1248,7 +1248,7 @@ else
 		Text = Text:gsub('User_Points',nko)
 		sendMsg(msg.chat_id_,msg.id_,Flter_Markdown(Text))
 		else
-		sendMsg(msg.chat_id_,msg.id_,'𖡨 الايدي بالصوره معطل \n⌔ ♡𝙽𝙰𝙼𝙴 𖡨  '..Namei..'   \n⌔𖡨 𝚄𝚂𝙴𝚁𖡨'..UserNameID..' .\n⌔♡ 𝙼𝚂𝙶𝙴𖡨'..msgs..' .\n⌔𖡨 𝚂𝚃𝙰 𖡨'..msg.TheRank..' .\n𖤏 𝙸𝙳 ࿖ '..msg.sender_user_id_..' .')
+		sendMsg(msg.chat_id_,msg.id_,'𖡨 الايدي بالصوره معطل \n⌔ ♡𝙽𝙰𝙼𝙴 𖡨  '..Namei..'     \n⌔𖡨 𝚄𝚂𝙴𝚁𖡨'..UserNameID..' .\n⌔♡ 𝙼𝚂𝙶𝙴𖡨'..msgs..' .\n⌔𖡨 𝚂𝚃𝙰 𖡨'..msg.TheRank..' .\n𖤏 𝙸𝙳 ࿖ '..msg.sender_user_id_..' .')
 		end
 end
 
@@ -1295,7 +1295,7 @@ local Get_info =  " \n𖡨 ( الاحـصـائـيـات الـرسـائـلك
 .."𖡨 الـصـوت ( "..audio.." )\n"
 .."𖡨 الـفـيـديـو ( "..video.." )\n"
 .."𖡨 الـتـعـديـل ( "..edited.." )\n"
-return sendMsg(msg.chat_id_,msg.id_,Get_info)  
+return sendMsg(msg.chat_id_,msg.id_,Get_info)    
 end,nil)
 return false
 end
@@ -1322,7 +1322,7 @@ if MsgText[1]== 'اسمي' then
 GetUserID(msg.sender_user_id_,function(arg,data)
 local FlterName = FlterName(data.first_name_..' '..(data.last_name_ or ""),90)
 local Get_info = " \n "..FlterName.." \n"
-return sendMsg(msg.chat_id_,msg.id_,Get_info)  
+return sendMsg(msg.chat_id_,msg.id_,Get_info)    
 end,nil)
 return false
 end
@@ -1364,7 +1364,7 @@ local Get_info ="𖡨 اهلا بك في معلوماتك . \n"
 .."𖡨  الصوت ( `"..audio.."` )\n"
 .."𖡨  الفيديو ( `"..video.."` )\n"
 .."𖡨  التعديل (`"..edited.."` )\n"
-return sendMsg(msg.chat_id_,msg.id_,Get_info)  
+return sendMsg(msg.chat_id_,msg.id_,Get_info)    
 end,nil)
 return false
 end
@@ -1382,7 +1382,7 @@ local edited = (redis:del(wegz..':edited:'..msg.chat_id_..':'..msg.sender_user_i
 local video = (redis:del(wegz..':video:'..msg.chat_id_..':'..msg.sender_user_id_) or 0)
 
 local Get_info ="𖡨  أهلا عزيزي تم مسح جميع معلوماتك "
-return sendMsg(msg.chat_id_,msg.id_,Get_info)  
+return sendMsg(msg.chat_id_,msg.id_,Get_info)    
 end,nil)
 return false
 end
@@ -1719,7 +1719,7 @@ end
 end 
 
 if MsgText[1] == 'المطور' then
-return redis:get(wegz..":TEXT_SUDO") or '𖡨 لا توجد كليشه المطور .\n𖡨 يمكنك اضافه كليشه من خلال الامر\n     " `ضع كليشه المطور` " \n'
+return redis:get(wegz..":TEXT_SUDO") or '𖡨 لا توجد كليشه المطور .\n𖡨 يمكنك اضافه كليشه من خلال الامر\n       " `ضع كليشه المطور` " \n'
 end
 
 if MsgText[1] == "اذاعه عام بالتوجيه" or MsgText[1] == "اذاعه عام بالتوجيه" then
@@ -2089,7 +2089,7 @@ if MsgText[1] == "الاوامر" then
 if not msg.Admin then return "𖡨هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n𖡨 " end
 return [[
 
-𖡨  ‌‌‏الأوامر 
+𖡨  ‌‌‏الأوامر ↓
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
 𖡨  م1  أوامر الاداره.
 𖡨  م2  أوامر إعدادات المجموعه.
@@ -2106,11 +2106,11 @@ return [[
 𖡨  المطور  لعرض كليشة مطور البوت.
 
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
-𖡨 مـعـرف الـمـطـور  ]]..SUDO_USER..[[  ]]
+𖡨معرف المطور  ]]..SUDO_USER..[[  ]]
 end
 if MsgText[1]== 'م1' then
 if not msg.Admin then return "𖡨هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n𖡨 " end
-local text =[[   
+local text =[[     
 𖡨 ❬أوامر الرفع والتنزيل❭
 ——————𝗪𝗘𝗚𝗭——————
 𖡨 رفع «» تنزيل ❬منشئ ❭
@@ -2136,7 +2136,7 @@ local text =[[
 𖡨  منع + الكلمة «» لمنع كلمة داخل المجموعة.
 𖡨  الغاء منع «» لالغاء منع الكلمة.
 ——————𝗪𝗘𝗚𝗭——————
-𖡨 مـعـرف الـمـطـور ]]..SUDO_USER
+𖡨 تواصل معي للأستفسار ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2160,7 +2160,7 @@ local text = [[
 𖡨  مسح امر + الامر › لمسح❬الأمر المضاف❭
 𖡨  قائمـه الاوامر › لمعرفه❬الأوامر المضافه❭
 ——————𝗪𝗘𝗚𝗭——————
-𖡨 مـعـرف الـمـطـور ]]..SUDO_USER
+𖡨 معـرف المـطور ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2197,7 +2197,7 @@ local text = [[
 𖡨  قفل › فتح ❬الفيـــديــو بالتقييد❭
 𖡨  قفل › فتح ❬التوجيــه بالتقييــد❭ 
 ——————𝗪𝗘𝗚𝗭——————
-𖡨 مـعـرف الـمـطـور  ]]..SUDO_USER
+𖡨 معـرف المـطور ↤︎ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2226,7 +2226,7 @@ local text = [[
 𖡨  طرد البوتات › لطرد كل البوتات.
 𖡨  طرد المحذوفين › لطرد الحسابات المحذوفه.
 ——————𝗪𝗘𝗚𝗭——————
-𖡨 مـعـرف الـمـطـور  ]]..SUDO_USER
+𖡨 معـرف المـطور  ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2248,13 +2248,13 @@ local text =[[
 𖡨  رفع › ❬ بقلبي ❭ تنزيل › ❬ من قلبي❭
 𖡨  ❬ طلاق ❭ › ❬ زواج ❭
 ——————𝗪𝗘𝗚𝗭——————
-𖡨  مـعـرف الـمـطـور  ]]..SUDO_USER
+𖡨  معـرف المـطور  ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
 if MsgText[1]== 'م6' then
 if not msg.Admin then return "𖡨 هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n𖡨 " end
-local text = [[   
+local text = [[     
 𖡨 -❬ اوامر التفعيل و التعطيل ❭
 ——————𝗪𝗘𝗚𝗭——————
 𖡨  تفعيل › تعطيل  ❬ الرفــع ❭
@@ -2265,7 +2265,7 @@ local text = [[
 𖡨  تفعيل › تعطيل  ❬ الايدي ❭
 𖡨  تفعيل › تعطيل  ❬ الايدي بالصوره ❭
 ——————𝗪𝗘𝗚𝗭——————
-𖡨  مـعـرف الـمـطـور  ]]..SUDO_USER
+𖡨  معـرف المـطور  ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2283,13 +2283,13 @@ local text = [[
 𖡨  ضع تكرار + العدد › لوضع ❬ تكرار ❭
 
 ——————𝗪𝗘𝗚𝗭——————
-𖡨  مـعـرف الـمـطـور  ]]..SUDO_USER
+𖡨  للتواصل و الإستفسار ↤︎   ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
 if MsgText[1]== "م المطور" then
 if not msg.SudoBase then return "𖡨 للمطور الاساسي فقط " end
-local text = [[   
+local text = [[     
 𖡨 -❬اوامـر المطـور❭ 
 ——————𝗪𝗘𝗚𝗭——————
 𖡨  تفعيـل › ❬لتفعيل البوت ❭
@@ -2307,14 +2307,14 @@ local text = [[
 𖡨  تحديث › ❬لتحديث ملفات البوت❭
 𖡨  تحديث السورس › ❬لتحديث السورس الى إصدار أحدث❭
 ——————𝗪𝗘𝗚𝗭——————
-𖡨  مـعـرف الـمـطـور  ]]..SUDO_USER
+𖡨  معـرف المـطور  ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
 
 if MsgText[1]== 'اوامر الرد' then
 if not msg.Director then return "𖡨 هذا الامر يخص {المطور,المنشئ,المدير,المطور} فقط  \n𖡨 " end
-local text = [[   
+local text = [[     
 𖡨 -❬جميع أوامر الردود ❭
 ——————𝗪𝗘𝗚𝗭——————
 𖡨  الردود › لعرض الردود المثبته
@@ -2326,7 +2326,7 @@ local text = [[
 𖡨  مسح رد عام  › لمسح الرد العام. 
 𖡨  مسح الردود العامه › لمسح كل ردود العامه.
 ——————𝗪𝗘𝗚𝗭——————
-𖡨  مـعـرف الـمـطـور  ]]..SUDO_USER
+𖡨  معـرف المـطور  ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2364,9 +2364,16 @@ end
 end)
 return false
 end
+end
+
+if MsgText[1] == "المبرمج أحمد " then
+return [[
+[أحمد مبرمج سورس ويجز](t.me/ahmedyad200)
+]]
+end
+
 end 
 
---[[
 if MsgText[1] == "بوت حذف" or MsgText[1] == "رابط حذف" or MsgText[1] == "هحذف" then
 local keyboard = {}
 keyboard.inline_keyboard = {
@@ -2378,7 +2385,6 @@ keyboard.inline_keyboard = {
 }   
 send_inline(msg.chat_id_,  "𝗦𝗢𝗨𝗥𝗖𝗘 𝗪𝗘𝗚𝗭 𝗗𝗘𝗟𝗘𝗧𝗘𝗗" ,keyboard,'deleted')
 end
-]]--
 
 if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
 local keyboard = {}
@@ -2455,18 +2461,18 @@ local getChatId = function(id)
   local chat = {}
   local id = tostring(id)
   if id:match("^-100") then
-  local channel_id = id:gsub("-100", "")
-  chat = {ID = channel_id, type = "channel"}
+    local channel_id = id:gsub("-100", "")
+    chat = {ID = channel_id, type = "channel"}
   else
-  local group_id = id:gsub("-", "")
-  chat = {ID = group_id, type = "group"}
+    local group_id = id:gsub("-", "")
+    chat = {ID = group_id, type = "group"}
   end
   return chat
 end
 local getChannelFull = function(channel_id, cb)
   tdcli_function({
-  ID = "GetChannelFull",
-  channel_id_ = getChatId(channel_id).ID
+    ID = "GetChannelFull",
+    channel_id_ = getChatId(channel_id).ID
   }, cb or dl_cb, nil)
 end
 
@@ -2759,8 +2765,8 @@ end
 
 if Text == 'tophoto' or Text == 'صوره' and tonumber(msg.reply_to_message_id_) > 0 then
 function tophoto(kara,wegz)   
-if wegz.content_.ID == "MessageSticker" then    
-local bd = wegz.content_.sticker_.sticker_.path_      
+if wegz.content_.ID == "MessageSticker" then        
+local bd = wegz.content_.sticker_.sticker_.path_          
 sendPhoto(msg.chat_id_,msg.id_,bd,'')
 else
 sendMsg(msg.chat_id_,msg.id_,'𖡨 عزيزي المستخدم\n𖡨 الامر فقط للملصق\n')
@@ -2817,7 +2823,7 @@ text = [[𖡨 أهلا انا بوت   []]..redis:get(wegz..':NameBot:')..[[] �
  𖡨 مـعـرف الـمـطـــور : ]]..SUDO_USER..[[
 ]]
 else
-text = [[𖡨 أهلا انا بوت  []]..redis:get(wegz..':NameBot:')..[[] 🗽
+text = [[𖡨 أهلا انا بوت    []]..redis:get(wegz..':NameBot:')..[[] 🗽
 𖡨  أختصاصي حماية المجموعات ..
 𖡨  مـن السبام والتوجيه والتكرار والخ..
 𖡨  لتفعيل البوت اتبع الشـروط ..
@@ -3279,7 +3285,7 @@ else
 tdcli_function({ID="UnpinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100','')},
 function(arg,data) 
 if data.ID == "Ok" then
-return sendMsg(msg.chat_id_,msg.id_,"𖡨 عذرا التثبيت مقفل من قبل الاداره تم الغاء التثبيت\n")    
+return sendMsg(msg.chat_id_,msg.id_,"𖡨 عذرا التثبيت مقفل من قبل الاداره تم الغاء التثبيت\n")      
 end
 end,nil)
 end
@@ -3388,7 +3394,7 @@ if Json_Info.result.can_restrict_members == true then
 restrict = 'ꪜ' else restrict = '✘' end
 if Json_Info.result.can_promote_members == true then
 promote = 'ꪜ' else promote = '✘' end
-return sendMsg(chat,msg.id_,'𖡨 الرتبة : مشرف\n𖡨 والصلاحيات هي  \nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n𖡨 تغير معلومات المجموعه  ❪ '..info..' ❫\n𖡨 حذف الرسائل 𖡨 ❪ '..delete..' ❫\n𖡨 حظر المستخدمين 𖡨 ❪ '..restrict..' ❫\n𖡨 دعوة مستخدمين 𖡨 ❪ '..invite..' ❫\n𖡨 تثبيت الرسائل 𖡨 ❪ '..pin..' ❫\n𖡨 اضافة مشرفين جدد 𖡨 ❪ '..promote..' ❫\n\n𖡨 ملاحضه » علامة ❪  ꪜ ❫ تعني لديه الصلاحية وعلامة ❪ ✘ ❫ تعني ليس ليديه الصلاحيه')   
+return sendMsg(chat,msg.id_,'𖡨 الرتبة : مشرف\n𖡨 والصلاحيات هي ↓ \nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n𖡨 تغير معلومات المجموعه  ❪ '..info..' ❫\n𖡨 حذف الرسائل 𖡨 ❪ '..delete..' ❫\n𖡨 حظر المستخدمين 𖡨 ❪ '..restrict..' ❫\n𖡨 دعوة مستخدمين 𖡨 ❪ '..invite..' ❫\n𖡨 تثبيت الرسائل 𖡨 ❪ '..pin..' ❫\n𖡨 اضافة مشرفين جدد 𖡨 ❪ '..promote..' ❫\n\n𖡨 ملاحضه » علامة ❪  ꪜ ❫ تعني لديه الصلاحية وعلامة ❪ ✘ ❫ تعني ليس ليديه الصلاحيه')   
 end
 end
 end
@@ -3399,7 +3405,7 @@ Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del Becuse Send Fwd \27[0m")
 
 if data.ID == "Error" and data.code_ == 6 then 
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) and not redis:get(wegz..':User_Fwd_Msg:'..msg.sender_user_id_..':flood') then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3416,7 +3422,7 @@ elseif redis:get(wegz..':tqeed_fwd:'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del Becuse Send Fwd tqeed \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 Restrict(msg.chat_id_,msg.sender_user_id_,1)
 end)
@@ -3426,7 +3432,7 @@ elseif tonumber(msg.via_bot_user_id_) ~= 0 and redis:get(wegz..'mute_inline'..ms
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send inline \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3442,7 +3448,7 @@ if utf8.len(msg.text) > 500 and redis:get(wegz..'lock_spam'..msg.chat_id_) then 
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send long msg \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3466,7 +3472,7 @@ and redis:get(wegz..':tqeed_link:'..msg.chat_id_)  then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m The user i restricted becuse send link \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 Restrict(msg.chat_id_,msg.sender_user_id_,1)
 end)
@@ -3479,7 +3485,7 @@ and redis:get(wegz..'lock_link'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send link \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3494,7 +3500,7 @@ elseif (msg.text:match("[Hh][Tt][Tt][Pp][Ss]://") or msg.text:match("[Hh][Tt][Tt
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send web link \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3509,7 +3515,7 @@ elseif msg.text:match("#[%a%d_]+") and redis:get(wegz..'lock_tag'..msg.chat_id_)
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send tag \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3524,7 +3530,7 @@ elseif msg.text:match("@[%a%d_]+")  and redis:get(wegz..'lock_username'..msg.cha
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send username \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3540,7 +3546,7 @@ elseif not msg.textEntityTypeBold and (msg.textEntityTypeBold or msg.textEntityT
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send markdown \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3555,7 +3561,7 @@ elseif msg.textEntityTypeTextUrl and redis:get(wegz..'lock_webpage'..msg.chat_id
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send web page \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3571,7 +3577,7 @@ elseif msg.edited and redis:get(wegz..'lock_edit'..msg.chat_id_) then -- قفل 
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send Edit \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3587,7 +3593,7 @@ elseif msg.content_.ID == "MessageUnsupported" and redis:get(wegz..'mute_video'.
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send video \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3603,7 +3609,7 @@ if redis:get(wegz..'mute_photo'..msg.chat_id_)  then -- قفل الصور
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send photo \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3618,7 +3624,7 @@ elseif redis:get(wegz..':tqeed_photo:'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m The user resctricted becuse send photo \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 Restrict(msg.chat_id_,msg.sender_user_id_,3)
 end)
@@ -3629,7 +3635,7 @@ if redis:get(wegz..'mute_video'..msg.chat_id_) then -- قفل الفيديو
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send vedio \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3644,7 +3650,7 @@ elseif redis:get(wegz..':tqeed_video:'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m The user restricted becuse send video \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 Restrict(msg.chat_id_,msg.sender_user_id_,3)
 end)
@@ -3654,7 +3660,7 @@ elseif msg.document and redis:get(wegz..'mute_document'..msg.chat_id_) then -- �
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send file \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
  if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3669,7 +3675,7 @@ elseif msg.sticker and redis:get(wegz..'mute_sticker'..msg.chat_id_) then --قف
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send sticker \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3685,7 +3691,7 @@ if redis:get(wegz..'mute_gif'..msg.chat_id_) then -- قفل المتحركه
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send gif \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3700,7 +3706,7 @@ elseif redis:get(wegz..':tqeed_gif:'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m The user restricted becuse send gif \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 Restrict(msg.chat_id_,msg.sender_user_id_,3)
 end)
@@ -3710,7 +3716,7 @@ elseif msg.contact and redis:get(wegz..'mute_contact'..msg.chat_id_) then -- ق�
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send Contact \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
  if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3725,7 +3731,7 @@ elseif msg.location and redis:get(wegz..'mute_location'..msg.chat_id_) then -- �
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send location \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
  if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3740,7 +3746,7 @@ elseif msg.voice and redis:get(wegz..'mute_voice'..msg.chat_id_) then -- قفل 
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send voice \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
  if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3755,7 +3761,7 @@ elseif msg.game and redis:get(wegz..'mute_game'..msg.chat_id_) then -- قفل ا
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send game \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3770,7 +3776,7 @@ elseif msg.audio and redis:get(wegz..'mute_audio'..msg.chat_id_) then -- قفل 
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send audio \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3785,7 +3791,7 @@ elseif msg.replyMarkupInlineKeyboard and redis:get(wegz..'mute_keyboard'..msg.ch
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send keyboard \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3799,7 +3805,7 @@ return false
 end
 
 if msg.content_ and msg.content_.caption_ then -- الرسايل الي بالكابشن
-print("sdfsd   f- ---------- ")
+print("sdfsd     f- ---------- ")
 if (msg.content_.caption_:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]/") 
 or msg.content_.caption_:match("[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Dd][Oo][Gg]/") 
 or msg.content_.caption_:match("[Tt].[Mm][Ee]/") 
@@ -3809,7 +3815,7 @@ and redis:get(wegz..'lock_link'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send link caption \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3828,7 +3834,7 @@ and redis:get(wegz..'lock_webpage'..msg.chat_id_) then
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send webpage caption \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3843,7 +3849,7 @@ elseif msg.content_.caption_:match("@[%a%d_]+") and redis:get(wegz..'lock_userna
 Del_msg(msg.chat_id_,msg.id_,function(arg,data)
 print("\27[1;31m Msg Del becuse send username caption \27[0m")
 if data.ID == "Error" and data.code_ == 6 then
-return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')  
+return sendMsg(msg.chat_id_,msg.id_,'𖡨 لا يمكنني مسح الرساله المخالفه .\n𖡨 لست مشرف او ليس لدي صلاحيه  الحذف \n')    
 end
 if redis:get(wegz..'lock_woring'..msg.chat_id_) then
 local msgx = "𖡨 عذرا ممنوع ارسال التاك او المعرف  \n"
