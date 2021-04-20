@@ -4086,7 +4086,8 @@ elseif Text== "اوامر التسليه"  then return sendMsg(msg.chat_id_,msg.
  رابط الحذف في جميع مواقع التواصل ✸
 فكر قبل لا تتسرع وتروح
 ٴ——————𖣐wegz𖣐——————
-❆رابط حذف  [Telegram](https://my.telegram.org/auth?to=delete) ܁
+❆رابط حذف [Telegram](https://my.telegram.org/auth?to=delete) ܁
+❆بوت حذف [Telegram](t.me/LC6BOT) ܁
 ❆رابط حذف [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
 ❆رابط حذف [Facebook](https://www.facebook.com/help/deleteaccount) ܁
 ❆رابط حذف [Snspchat](https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount) ܁
