@@ -1851,10 +1851,6 @@ UpdateSourceStart = true
 sendMsg(msg.chat_id_,msg.id_,' *╿* يوجد تحديث جديد الان \n*╽* جاري تنزيل وتثبيت التحديث  ...' )
 redis:set(selnder..":VERSION",GetVerison)
 return false
-else
-return "╿الاصدار الحالي : *v"..version.."* \n*╽* لديـك احدث اصدار \n"
-end
-return false
 end
 
 if MsgText[1] == 'اصدار السورس' or MsgText[1] == 'الاصدار' then
