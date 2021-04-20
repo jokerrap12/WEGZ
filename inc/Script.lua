@@ -2435,6 +2435,18 @@ end
 
 end 
 
+if MsgText[1] == "بوت حذف" or MsgText[1]=="رابط حذف" then
+local keyboard = {}
+keyboard.inline_keyboard = {
+{{text = 'Telegram',url="https://my.telegram.org/auth?to=delete"}},
+{{text = 'BOT Telegram', url="t.me/LC6BOT"}}, 
+{{text = 'instagram', url="https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/"}}, 
+{{text = 'Facebook', url="https://www.facebook.com/help/deleteaccount"}}, 
+{{text = 'Snspchat', url="https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount"}}, 
+}   
+send_inline(msg.chat_id_,  "خود" ,keyboard,'html')
+end
+
 if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
 local keyboard = {}
 keyboard.inline_keyboard = {
