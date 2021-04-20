@@ -550,7 +550,9 @@ end
 	download_file('https://raw.githubusercontent.com/ahmedyad200/max/master/plugins/games.lua','./plugins/games.lua')
 	sendMsg(msg.chat_id_,msg.id_,'• {* تــم تحديث وتثبيت السورس  *} .\n\n• { Bot is Update » }',nil,function(arg,data)
 	dofile("./inc/Run.lua")
-	print("Reload ~ ./inc/Run.lua")
+	dofile("./inc/functions.lua")
+	dofile("./inc/Script.lua")
+	print("Reload Source")
 	end) 
 	end
 	
