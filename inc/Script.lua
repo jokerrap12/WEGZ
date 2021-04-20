@@ -1844,17 +1844,21 @@ end
 
 if (MsgText[1] ==  'تحديث السورس'  or MsgText[1] ==  'تحديث السورس 🔂' ) then
 if not msg.SudoBase then return "*│*هذا الامر يخص {المطور الاساسي} فقط  \n" end
-local GetVerison = https.request( 'https://raw.githubusercontent.com/ahmedyad200/max/master/GetVersion.txt' ) or 1
+local GetVerison = https.request( 'https://raw.githubusercontent.com/ahmedyad200/selnder.github.io/master/GetVersion.txt' ) or 0
 print(GetVerison.." > "..version)
 if GetVerison > version then
 UpdateSourceStart = true
 sendMsg(msg.chat_id_,msg.id_,' *╿* يوجد تحديث جديد الان \n*╽* جاري تنزيل وتثبيت التحديث  ...' )
 redis:set(selnder..":VERSION",GetVerison)
 return false
+else
+return "╿الاصدار الحالي : *v"..version.."* \n*╽* لديـك احدث اصدار \n"
+end
+return false
 end
 
 if MsgText[1] == 'اصدار السورس' or MsgText[1] == 'الاصدار' then
-return 'ٴ𐄬 اصدار سورس ويجز : *v'..version..'* \n'
+return 'ٴ𐄬 اصدار سورس سليندر : *v'..version..'* \n'
 end
 
 
@@ -1889,7 +1893,7 @@ else
 sendMsg(msg.chat_id_,msg.id_,"↯𖣐 عذراً النسخه الاحتياطيه هذا ليست للبوت » ["..Bot_User.."]  \n")
 end
 else 
-sendMsg(msg.chat_id_,msg.id_,'↯𖣐 عذراً اسم الملف غير مدعوم للنظام او لا يتوافق مع سورس ويجز يرجاء جلب الملف الاصلي الذي قمت بسحبه وبدون تعديل ع الاسم\n')
+sendMsg(msg.chat_id_,msg.id_,'↯𖣐 عذراً اسم الملف غير مدعوم للنظام او لا يتوافق مع سورس سليندر يرجاء جلب الملف الاصلي الذي قمت بسحبه وبدون تعديل ع الاسم\n')
 end  
 else
 sendMsg(msg.chat_id_,msg.id_,'↯𖣐 عذراً الملف ليس بصيغه Json !?\n')
@@ -1913,7 +1917,7 @@ if (MsgText[1]== "ايدي" or MsgText[1]=="ايديي𖣐") and msg.type == "pv
 
 if MsgText[1]== "قناة السورس" and msg.type == "pv" then
 local inline = {{{text="-قنآهہ‏‏ آلسـورس اضـغـط هـنـآ ",url="https://t.me/SOURCESLENDER"}}}
-send_key(msg.sender_user_id_,'   [قناة سورس : ويجز](https://t.me/SOURCESLENDER)' ,nil,inline,msg.id_)
+send_key(msg.sender_user_id_,'   [قناة سورس : سليندر](https://t.me/SOURCESLENDER)' ,nil,inline,msg.id_)
 return false
 end
 
@@ -2425,7 +2429,7 @@ end
 
 if MsgText[1] == "المبرمج أحمد" then
 return [[
-[أحمد مبرمج سورس ويجز](t.me/ahmedyad200)
+[أحمد مبرمج سورس سليندر](t.me/ahmedyad200)
 ]]
 end
 
@@ -2835,7 +2839,7 @@ end
 if msg.text=="/start" then 
 
 if msg.SudoBase then
-local text = '- شكراً لك لإستخدام سورس ويجز\n- أنت المطور الاساسي هنا\n—————————\n\n- يمكنك الأن التحكم بأوامر البوت عن طريق لوحة التحكم بالبوت\nفقط انقر على الأمر الذي اريده‏\n—————————\n\n-مطور السورس @ahmedyad200'
+local text = '- شكراً لك لإستخدام سورس سليندر\n- أنت المطور الاساسي هنا\n—————————\n\n- يمكنك الأن التحكم بأوامر البوت عن طريق لوحة التحكم بالبوت\nفقط انقر على الأمر الذي اريده‏\n—————————\n\n-مطور السورس @ahmedyad200'
 local keyboard = {
 {"الاحصائيات"},
 {"تعطيل الترحيب","ضع اسم للبوت","ضع صوره للترحيب"},
@@ -4035,7 +4039,7 @@ return sendMsg(msg.chat_id_,msg.id_,dr[math.random(#dr)])
 elseif not msg.SudoUser and Text==" بوت" or Text == "بوت" then
 return 
 sendMsg(msg.chat_id_,msg.id_,nnn[math.random(#nnn)]) 
-elseif Text== "أحمد" or Text== "أحمد" then return  sendMsg(msg.chat_id_,msg.id_,"[مبرمج ويجز](https://t.me/ahmedyad200)")
+elseif Text== "أحمد" or Text== "أحمد" then return  sendMsg(msg.chat_id_,msg.id_,"[مبرمج سليندر](https://t.me/ahmedyad200)")
 elseif Text== "ملك التلجرام" or Text== "مطور السورس" then return  sendMsg(msg.chat_id_,msg.id_,"[أحمد عياد ♧](https://t.me/ahmedyad200)")
 elseif Text== "رفع غبي"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم رفع الغبي بنجاح↯\nٴ𐄬 تمت إضافته إلى قائمه الأغبياء\n𖣐")
 elseif Text== "تنزيل غبي"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم تنزيل الغبي بنجاح↯\nٴ𐄬 تمت الزاله من قائمه الأغبياء\n𖣐")
