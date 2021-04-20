@@ -2428,7 +2428,7 @@ end
 end
 
 
-ifif MsgText[1] == "السورس" or MsgText[1]=="سورس" then
+if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
 local keyboard = {}
 keyboard.inline_keyboard = {
 {{text = '𝐶𝐻𝐴𝑁𝑁𝐸𝐿',url="https://t.me/WEGZ_ROB0T"}},
