@@ -2427,7 +2427,7 @@ return false
 end
 end
 
-if MsgText[1] == "بوت حذف" or MsgText[1]=="رابط حذف" then
+--[[if MsgText[1] == "بوت حذف" or MsgText[1]=="رابط حذف" then
 local keyboard = {}
 keyboard.inline_keyboard = {
 {{text = 'Telegram',url="https://my.telegram.org/auth?to=delete"}},
@@ -2437,7 +2437,7 @@ keyboard.inline_keyboard = {
 {{text = 'Snspchat', url="https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount"}}, 
 }   
 send_inline(msg.chat_id_,  "خود" ,keyboard,'html')
-end
+end]]--
 
 if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
 local keyboard = {}
@@ -4073,7 +4073,7 @@ elseif Text== "اوامر التسليه"  then return sendMsg(msg.chat_id_,msg.
   SendMention(msg.chat_id_,data.id_,msg.id_,"• اضغط على الايدي ليتم النسخ\n\n "..USERNAME.." ~⪼ ( "..data.id_.." )",37,USERCAR)  
   return false
   end)
-  elseif Text==" " or Text==" " or Text==" " or Text==" " or Text==" " then
+  elseif Text=="رابط حذف" or Text=="بوت حذف" or Text=="بوت الحذف" or Text=="رابط الحذف" or Text=="هحذف" then
   return sendMsg(msg.chat_id_,msg.id_,[[
  رابط الحذف في جميع مواقع التواصل ✸
 فكر قبل لا تتسرع وتروح
