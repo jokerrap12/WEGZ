@@ -2444,7 +2444,7 @@ keyboard.inline_keyboard = {
 {{text = 'Facebook', url="https://www.facebook.com/help/deleteaccount"}}, 
 {{text = 'Snspchat', url="https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount"}}, 
 }   
-send_inline(msg.chat_id_,  "خود" ,keyboard,'html')
+send_inline(msg.chat_id_,  "𝗦𝗢𝗨𝗥𝗖𝗘 𝗪𝗘𝗚𝗭 𝗗𝗘𝗟𝗘𝗧𝗘𝗗" ,keyboard,'html')
 end
 
 if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
