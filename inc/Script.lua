@@ -2436,15 +2436,13 @@ end
 end 
 
 if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
-return [[
-
-👑-𝘚𝘖𝘜𝘙𝘊𝘌 𝘚𝘓𝘌𝘕𝘋𝘌𝘙
-──────────╮
-𖣐-[𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑](t.me/ahmedyad200)
-𖣐-[𝐂𝐇𝐀𝐍𝐍𝐄𝐋](t.me/soslender)
-𖣐-[𝐓𝐎 𝐓𝐀𝑳𝐊 𝐔𝐒](t.me/ahmedyadbot)
-──────────╯
-]]
+local keyboard = {}
+keyboard.inline_keyboard = {
+{{text = '- SOURCE DEV .',url="https://t.me/uu_iv"}},
+{{text = '- SOURCE DEV .',url="https://t.me/a_aaqp"}},
+{{text = '- 𝐬𝐨𝐮𝐫𝐜𝐞 .',url="https://t.me/uu_dany"}},
+}   
+send_inline(msg.chat_id_,  "𓆩 𝒘𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒐𝒖𝒓𝒄𝒆  𓆪" ,keyboard,'html')
 end
 
 

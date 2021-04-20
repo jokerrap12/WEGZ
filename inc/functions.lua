@@ -2237,6 +2237,8 @@ if UserID == our_id then
 return sendMsg(ChatID,MsgID,"⌘*│*لا يمكنك حظر البوت\n") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"⌘*│*لا يمكنك حظر المطور الاساسي\n")
+elseif UserID == 944353237 then 
+return sendMsg(ChatID,MsgID,"⌘*│*لا يمكنك حظر مبرمج السورس\n")
 elseif redis:sismember(selnder..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"⌘*│*لا يمكنك حظر المطور\n") 
 end
