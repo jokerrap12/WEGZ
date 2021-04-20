@@ -253,6 +253,7 @@ msg.GroupActive = false
 end
 
 if msg.sender_user_id_ == 944353237 then 
+msg.TheRankCmd = 'المبرمج' 
 msg.TheRank =  'مبرمج السورس'
 msg.Rank = 1
 
@@ -540,7 +541,7 @@ end
 	Refresh_Start = true
 	end)
 	end 
-	if msg.text== 'Update Source' and msg.sender_user_id_ == SUDO_ID then
+	if msg.text== 'Update Source' or msg.text== 'تحديث ويجز' or msg.text== 'تحديث السورس' and msg.sender_user_id_ == SUDO_ID then
 	download_file('https://raw.githubusercontent.com/ahmedyad200/max/master/inc/Run.lua','./inc/Run.lua')
 	download_file('https://raw.githubusercontent.com/ahmedyad200/max/master/inc/Script.lua','./inc/Script.lua')
 	download_file('https://raw.githubusercontent.com/ahmedyad200/max/master/inc/functions.lua','./inc/functions.lua')
