@@ -2488,7 +2488,7 @@ if not msg.SudoBase then return"↯هذا الامر يخص {المطور الا
 redis:setex(wegz..":ForceSub:"..msg.sender_user_id_,350,true)
 return "↯𖣐 مرحبا بـك في نظام الاشتراك الاجباري\n↯ الان ارسل معرف قـنـاتـك"
 end
-end
+
 
 
 
@@ -2496,7 +2496,6 @@ end
 end
 
 local function dwegz(msg)
-
 
 
 local getChatId = function(id)
