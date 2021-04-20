@@ -4081,7 +4081,7 @@ elseif Text== "اوامر التسليه"  then return sendMsg(msg.chat_id_,msg.
   SendMention(msg.chat_id_,data.id_,msg.id_,"• اضغط على الايدي ليتم النسخ\n\n "..USERNAME.." ~⪼ ( "..data.id_.." )",37,USERCAR)  
   return false
   end)
-  elseif Text=="ابي رابط الحذف" or Text=="ابي رابط حذف" or Text=="رابط حذف" or Text=="رابط الحذف" or Text=="رابط" then
+  elseif Text=="حساب محذوف" or Text=="هحذف حسابي" or Text=="دليت اكونت" or Text=="دليت حسابي" or Text=="رابط دليت" then
   return sendMsg(msg.chat_id_,msg.id_,[[
  رابط الحذف في جميع مواقع التواصل ✸
 فكر قبل لا تتسرع وتروح
