@@ -1844,7 +1844,7 @@ end
 
 if (MsgText[1] ==  'تحديث السورس'  or MsgText[1] ==  'تحديث السورس 🔂' ) then
 if not msg.SudoBase then return "*│*هذا الامر يخص {المطور الاساسي} فقط  \n" end
-local GetVerison = https.request( 'https://raw.githubusercontent.com/ahmedyad200/selnder.github.io/master/GetVersion.txt' ) or 0
+local GetVerison = https.request( 'https://raw.githubusercontent.com/ahmedyad200/max/master/GetVersion.txt' ) or 1
 print(GetVerison.." > "..version)
 if GetVerison > version then
 UpdateSourceStart = true
@@ -2436,15 +2436,12 @@ end
 end 
 
 if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
-return [[
-
-👑-𝘚𝘖𝘜𝘙𝘊𝘌 𝘚𝘓𝘌𝘕𝘋𝘌𝘙
-──────────╮
-𖣐-[𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑](t.me/ahmedyad200)
-𖣐-[𝐂𝐇𝐀𝐍𝐍𝐄𝐋](t.me/soslender)
-𖣐-[𝐓𝐎 𝐓𝐀𝑳𝐊 𝐔𝐒](t.me/ahmedyadbot)
-──────────╯
-]]
+local keyboard = {}
+keyboard.inline_keyboard = {
+{{text = '𝐶𝐻𝐴𝑁𝑁𝐸𝐿',url="https://t.me/WEGZ_ROB0T"}},
+{{text = '𝘉𝘖𝘛',url="http://t.me/WEGZ_ROBOT?startgroup=start"}},
+}   
+send_inline(msg.chat_id_,  "𝗦𝗢𝗨𝗥𝗖𝗘 𝗪𝗘𝗚𝗭" ,keyboard,'html')
 end
 
 
