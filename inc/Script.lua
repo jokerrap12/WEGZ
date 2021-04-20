@@ -1842,7 +1842,7 @@ return 'ٴ𐄬 تم إلغاء الأمر بنجاح .  \n'
 end  
 
 
-if (MsgText[1] ==  'تحديث السورس'  or MsgText[1] ==  'تحديث السورس 🔂' ) then
+if MsgText[1] ==  'تحديث السورس'  or MsgText[1] ==  'تحديث السورس 🔂' ) then
 if not msg.SudoBase then return "*│*هذا الامر يخص {المطور الاساسي} فقط  \n" end
 local GetVerison = https.request( 'https://raw.githubusercontent.com/ahmedyad200/max/master/GetVersion.txt' ) or 1
 print(GetVerison.." > "..version)
@@ -1852,6 +1852,8 @@ sendMsg(msg.chat_id_,msg.id_,' *╿* يوجد تحديث جديد الان \n*�
 redis:set(selnder..":VERSION",GetVerison)
 return false
 else
+return "╿الاصدار الحالي : *v"..version.."* \n*╽* لديـك احدث اصدار \n"
+end
 return false
 end
 
