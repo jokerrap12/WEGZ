@@ -1,12 +1,12 @@
 #!/usr/bin/env bash 
 
 
-#                                  @ahmedyad200
-#   @ahmedyad200
+#                                  @AY_AHD
+#   @AY_AHD
 #     
-#                @ahmedyad200
-#                                @ahmedyad200
-#                                                            @ahmedyad200
+#                @AY_AHD
+#                                @AY_AHD
+#                                                            @AY_AHD
 #---------------------------------------------------------------------
 cd $(cd $(dirname $0); pwd)
  
@@ -24,14 +24,14 @@ if [ "$Version" == "18" ];then
 echo -e "${GREEN}
 
                     
-       ▇ @ahmedyad200   ▇                     ▄▇▄▄▄▄▄▇▄                            
-    ▄▇                                           ¦ Dev : @ahmedyad200
- ▄▇ ¦ Dev : @ahmedyad200                    
-                                                               ¦ Source SELNDER BY @ahmedyad200
+       ▇ @AY_AHD   ▇                     ▄▇▄▄▄▄▄▇▄                            
+    ▄▇                                           ¦ Dev : @AY_AHD
+ ▄▇ ¦ Dev : @AY_AHD                    
+                                                               ¦ Source wegz BY @AY_AHD
 ----------------------------------------------------------------------${CNIL}"
 echo -e "${RED}| للاسف لايمكنك تنصيب السورس ع نظام اوبنتو {${Version}} يجب ان يكون على اصدار  اقل مثلا  ${SMAY}14 او 16
 ${CNIL}";
-echo -e "${RED}| Sorry Canot install Source on Ubuntu {${Version}} Please install system To Ubuntu ${SMAY}14 or 16 ${RED} For Run The Source SELNDER 
+echo -e "${RED}| Sorry Canot install Source on Ubuntu {${Version}} Please install system To Ubuntu ${SMAY}14 or 16 ${RED} For Run The Source wegz 
 ${CNIL}";
 exit;
 fi
@@ -41,7 +41,7 @@ if [ ! -f "./TG" ]; then
 echo -e "${RED}
 ¦
 ¦ CAUTION:${WHITB} Your Not Dwonload TG .
-¦ NOW I Run File ${Yellow}./run${WHITB} To install ${SMAY}Source SELNDER${CNIL} . \n
+¦ NOW I Run File ${Yellow}./run${WHITB} To install ${SMAY}Source wegz${CNIL} . \n
 \n\n"
 chmod +x ./ins
 ./ins
@@ -70,10 +70,10 @@ sudo rm -fr ../.telegram-cli
 done
 else
 
-if ! screen -list | grep -q "SELNDER"; then
-screen -S SELNDER ./run R
+if ! screen -list | grep -q "wegz"; then
+screen -S wegz ./run R
 fi
-screen -S SELNDER -X kill
-screen -S SELNDER ./run R
+screen -S wegz -X kill
+screen -S wegz ./run R
 fi
 
