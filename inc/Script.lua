@@ -2427,14 +2427,24 @@ return false
 end
 end
 
+if MsgText[1] == "المبرمج أحمد" then
+return [[
+[أحمد مبرمج سورس سليندر](t.me/ahmedyad200)
+]]
+end
+
+end 
 
 if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
-local keyboard = {}
-keyboard.inline_keyboard = {
-{{text = '𝐶𝐻𝐴𝑁𝑁𝐸𝐿',url="https://t.me/WEGZ_ROB0T"}},
-{{text = '𝘉𝘖𝘛',url="http://t.me/WEGZ_ROBOT?startgroup=start"}},
-}   
-send_inline(msg.chat_id_,  "𝗦𝗢𝗨𝗥𝗖𝗘 𝗪𝗘𝗚𝗭" ,keyboard,'html')
+return [[
+
+👑-𝘚𝘖𝘜𝘙𝘊𝘌 𝘚𝘓𝘌𝘕𝘋𝘌𝘙
+──────────╮
+𖣐-[𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑](t.me/ahmedyad200)
+𖣐-[𝐂𝐇𝐀𝐍𝐍𝐄𝐋](t.me/soslender)
+𖣐-[𝐓𝐎 𝐓𝐀𝑳𝐊 𝐔𝐒](t.me/ahmedyadbot)
+──────────╯
+]]
 end
 
 
@@ -4073,18 +4083,19 @@ elseif Text== "اوامر التسليه"  then return sendMsg(msg.chat_id_,msg.
 ❆رابط حذف [Snspchat](https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount) ܁
   ]] )
   --=====================================
-  elseif Text== "انا مين" or Text== "مين انا"  then
+  elseif Text== " احمد" or Text== "  احمد " or Text==" احمد" then
 if msg.SudoUser then  
-return sendMsg(msg.chat_id_,msg.id_,"انت مجرد مطور في البوت 😂")
+return sendMsg(msg.chat_id_,msg.id_,"[مطور السورس.](https://t.me/ahmedyad300) ")
 elseif msg.Creator then 
-return sendMsg(msg.chat_id_,msg.id_,"انت منشئ اساسي يعني المطور احسن منك 😂")
+return sendMsg(msg.chat_id_,msg.id_,"[مطور السورس.](https://t.me/ahmedyad300")
 elseif msg.Director then 
-return sendMsg(msg.chat_id_,msg.id_,"مجرد مدير متفرحش يعني 😒")
+return sendMsg(msg.chat_id_,msg.id_,"[مطور السورس.](https://t.me/ahmedyad300")
 elseif msg.Admin then 
-return sendMsg(msg.chat_id_,msg.id_,"ادمن ملوش لزمه 😒")
+return sendMsg(msg.chat_id_,msg.id_,"[مطور السورس.](https://t.me/ahmedyad300")
 else 
-return sendMsg(msg.chat_id_,msg.id_,"عضو حقير 😂")
-end  
+return sendMsg(msg.chat_id_,msg.id_,"[مطور السورس.](https://t.me/ahmedyad300")
+end 
+end 
 
 
 
