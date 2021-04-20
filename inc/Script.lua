@@ -2435,7 +2435,7 @@ end
 
 end 
 
-if MsgText[1] == "بوت حذف" or MsgText[1]=="رابط حذف" then
+if MsgText[1] == "بوت حذف" or MsgText[1] == "رابط حذف" or MsgText[1] == "هحذف" then
 local keyboard = {}
 keyboard.inline_keyboard = {
 {{text = 'Telegram',url="https://my.telegram.org/auth?to=delete"}},
