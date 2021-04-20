@@ -2427,16 +2427,25 @@ return false
 end
 end
 
-if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
-local keyboard = {}
-keyboard.inline_keyboard = {
-{{text = '- SOURCE DEV .',url="https://t.me/uu_iv"}},
-{{text = '- SOURCE DEV .',url="https://t.me/a_aaqp"}},
-{{text = '- 𝐬𝐨𝐮𝐫𝐜𝐞 .',url="https://t.me/uu_dany"}},
-}   
-send_inline(msg.chat_id_,  "𓆩 𝒘𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒔𝒐𝒖𝒓𝒄𝒆  𓆪" ,keyboard,'html')
+if MsgText[1] == "المبرمج أحمد" then
+return [[
+[أحمد مبرمج سورس سليندر](t.me/ahmedyad200)
+]]
 end
 
+end 
+
+if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
+return [[
+
+👑-𝘚𝘖𝘜𝘙𝘊𝘌 𝘚𝘓𝘌𝘕𝘋𝘌𝘙
+──────────╮
+𖣐-[𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑](t.me/ahmedyad200)
+𖣐-[𝐂𝐇𝐀𝐍𝐍𝐄𝐋](t.me/soslender)
+𖣐-[𝐓𝐎 𝐓𝐀𝑳𝐊 𝐔𝐒](t.me/ahmedyadbot)
+──────────╯
+]]
+end
 
 
 if MsgText[1] == "التاريخ" then
@@ -4019,8 +4028,8 @@ return sendMsg(msg.chat_id_,msg.id_,su[math.random(#su)])
 elseif not msg.SudoUser and Text== Bot_Name and not Text2 then  
 return sendMsg(msg.chat_id_,msg.id_,ss97[math.random(#ss97)])
 elseif Text:match("^قول (.*)$") then
-if utf8.len(Text:match("^قول (.*)$")) > 1000 then 
-return sendMsg(msg.chat_id_,msg.id_,"↯  ما اقول اقدر اكثر من 100 حرف")
+if utf8.len(Text:match("^قول (.*)$")) > 500 then 
+return sendMsg(msg.chat_id_,msg.id_,"↯  ما اقول اقدر اكثر من 500 حرف")
 end
 local callback_Text = FlterName(Text:match("^قول (.*)$"),50)
 if callback_Text and callback_Text == 'الاسم سبام' then
@@ -4055,27 +4064,12 @@ elseif Text== "زواج"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أه�
 elseif Text== "طلاق"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 اهلاً عزيزي\nٴ𐄬 تم طلاق الخاينه بنجاح↯\nٴ𐄬 الآن هي مطلقه \n𖣐")
 elseif Text== "اوامر التسليه"  then return sendMsg(msg.chat_id_,msg.id_,"\n‌‌‏ٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬\nٴ𐄬 مرحباً عزيزي\nٴ𐄬 هذي اوامر التسليه:  \nٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬\nٴ𐄬 رفع › تنزيل ❬ متوحد ❭\nٴ𐄬 رفع › تنزيل ❬ وتكه ❭\nٴ𐄬 رفع › تنزيل ❬ غبي ❭\nٴ𐄬 رفع › تنزيل ❬ كلب ❭\nٴ𐄬 رفع › تنزيل ❬ حمار ❭\nٴ𐄬 رفع › تنزيل ❬ زوجتي ❭\nٴ𐄬 رفع › تنزيل ❬ متوحده ❭\nٴ𐄬 رفع › ❬ بقلبي ❭ تنزيل › ❬ من قلبي❭\nٴ𐄬 ❬ طلاق ❭ › ❬ زواج ❭\nٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬")
 
-elseif Text== "انا مين" or Text== "اني منو" or Text=="انا منو" then
-if msg.SudoBase then  
-return sendMsg(msg.chat_id_,msg.id_,"انت حبيبي المطور الاساسي")
-elseif msg.SudoUser then  
-return sendMsg(msg.chat_id_,msg.id_,"انت حبيبي المطور")
-elseif msg.Creator then 
-return sendMsg(msg.chat_id_,msg.id_,"انت قلبي المنشئ")
-elseif msg.Director then 
-return sendMsg(msg.chat_id_,msg.id_,"مدير ولاتستاهل")
-elseif msg.Admin then 
-return sendMsg(msg.chat_id_,msg.id_,"أدمن ويخب عليك")
-else 
-return sendMsg(msg.chat_id_,msg.id_,"عضو فقط")
-end 
-end
 
  elseif Text== "ايديي" or Text=="ايدي ☆" then 
   GetUserID(msg.sender_user_id_,function(arg,data)
   if data.username_ then USERNAME = '@'..data.username_ else USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or "")) end
   local USERCAR = utf8.len(USERNAME)
-  SendMention(msg.chat_id_,data.id_,msg.id_,"• اضغط على الايدي ليتم النسخ\n\n "..USERNAME.." ~⪼ ( "`..data.id_..`" )",37,USERCAR)  
+  SendMention(msg.chat_id_,data.id_,msg.id_,"• اضغط على الايدي ليتم النسخ\n\n "..USERNAME.." ~⪼ ( "..data.id_.." )",37,USERCAR)  
   return false
   end)
   elseif Text=="ابي رابط الحذف" or Text=="ابي رابط حذف" or Text=="رابط حذف" or Text=="رابط الحذف" or Text=="رابط" then
@@ -4083,12 +4077,28 @@ end
  رابط الحذف في جميع مواقع التواصل ✸
 فكر قبل لا تتسرع وتروح
 ٴ——————𖣐slender𖣐——————
-❆رابط حذف [Telegram](https://my.telegram.org/auth?to=delete) ܁
+❆رابط حذف  [Telegram](https://my.telegram.org/auth?to=delete) ܁
 ❆رابط حذف [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
 ❆رابط حذف [Facebook](https://www.facebook.com/help/deleteaccount) ܁
 ❆رابط حذف [Snspchat](https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount) ܁
   ]] )
   --=====================================
+  elseif Text== " احمد" or Text== "  احمد " or Text==" احمد" then
+if msg.SudoUser then  
+return sendMsg(msg.chat_id_,msg.id_,"[مطور السورس.](https://t.me/ahmedyad300) ")
+elseif msg.Creator then 
+return sendMsg(msg.chat_id_,msg.id_,"[مطور السورس.](https://t.me/ahmedyad300")
+elseif msg.Director then 
+return sendMsg(msg.chat_id_,msg.id_,"[مطور السورس.](https://t.me/ahmedyad300")
+elseif msg.Admin then 
+return sendMsg(msg.chat_id_,msg.id_,"[مطور السورس.](https://t.me/ahmedyad300")
+else 
+return sendMsg(msg.chat_id_,msg.id_,"[مطور السورس.](https://t.me/ahmedyad300")
+end 
+end 
+
+
+
 
 end 
 
