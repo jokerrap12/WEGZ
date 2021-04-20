@@ -561,7 +561,7 @@ end
 	redis:del('setusername'..msg.sender_user_id_)
 	mmd = redis:get(wegz..":SUDO_ID:")
 redis:hset(wegz..'username:'..tonumber(mmd),'username',msg.text)
-	send_msg(msg.chat_id_,"• عزيزي تم تغيير المطور الاساسي بنجاح الان ارسل reload ...")
+	send_msg(msg.chat_id_,"• عزيزي تم تغيير المطور الاساسي بنجاح الان ارسل `reload` ...")
 	end
 	if msg.text and msg.text:match('(%d+)(%d+)(%d+)(%d+)') and redis:get('setid'..msg.sender_user_id_) then
 	redis:setex('setusername'..msg.sender_user_id_,120,true)
