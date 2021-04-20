@@ -1206,7 +1206,7 @@ if redis:get(wegz.."getidstatus"..msg.chat_id_) == "Photo" then
 		}
 		ssssys = ali[math.random(#ali)]
 		if not redis:get("KLISH:ID") then
-		sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,'⌔ ♡𝙽𝙰𝙼𝙴 ↯  '..Namei..'     \n⌔↯ 𝚄𝚂𝙴𝚁↯'..UserNameID..' .\n⌔♡ 𝙼𝚂𝙶𝙴↯'..msgs..' .\n⌔↯ 𝚂𝚃𝙰 ↯'..msg.TheRank..' .\n𖤏 𝙸𝙳 ࿖ '..msg.sender_user_id_..' \n⚘ 𝚌𝚑 𖠪 @@SOURCESLENDER .',dl_cb,nil)
+		sendPhoto(msg.chat_id_,msg.id_,data.photos_[0].sizes_[1].photo_.persistent_id_,'⌔ ♡𝙽𝙰𝙼𝙴 ↯  '..Namei..'     \n⌔↯ 𝚄𝚂𝙴𝚁↯'..UserNameID..' .\n⌔♡ 𝙼𝚂𝙶𝙴↯'..msgs..' .\n⌔↯ 𝚂𝚃𝙰 ↯'..msg.TheRank..' .\n𖤏 𝙸𝙳 ࿖ '..msg.sender_user_id_..' \n⚘ 𝚌𝚑 𖠪 @@SOURCEwegz .',dl_cb,nil)
 		else
 		Text = redis:get("KLISH:ID")
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
@@ -1221,7 +1221,7 @@ if redis:get(wegz.."getidstatus"..msg.chat_id_) == "Photo" then
 		end
 	else
 		if not redis:get("KLISH:ID") then
-		sendMsg(msg.chat_id_,msg.id_,'↯ لا يمكنني عرض صورتك لانك قمت بحظر البوت او انك لاتملك صوره في بروفيلك ...!\n︙⌔↯ 𝚄𝚂𝙴𝚁↯'..UserNameID..' .\n︙⌔ ♡𝙽𝙰𝙼𝙴 ↯  '..Namei..'     \n︙⌔♡ 𝙼𝚂𝙶𝙴↯'..msgs..' .\n︙⌔↯ 𝚂𝚃𝙰 ↯'..msg.TheRank..' .\n𖤏 𝙸𝙳 ࿖ '..msg.sender_user_id_..' \n⚘ 𝚌𝚑 𖠪 @@SOURCESLENDER .')
+		sendMsg(msg.chat_id_,msg.id_,'↯ لا يمكنني عرض صورتك لانك قمت بحظر البوت او انك لاتملك صوره في بروفيلك ...!\n︙⌔↯ 𝚄𝚂𝙴𝚁↯'..UserNameID..' .\n︙⌔ ♡𝙽𝙰𝙼𝙴 ↯  '..Namei..'     \n︙⌔♡ 𝙼𝚂𝙶𝙴↯'..msgs..' .\n︙⌔↯ 𝚂𝚃𝙰 ↯'..msg.TheRank..' .\n𖤏 𝙸𝙳 ࿖ '..msg.sender_user_id_..' \n⚘ 𝚌𝚑 𖠪 @@SOURCEwegz .')
 		else
 		Text = redis:get("KLISH:ID")
 		Text = Text:gsub('IDGET',msg.sender_user_id_)
@@ -1764,7 +1764,7 @@ return sudolist(msg)
 end
  
 if MsgText[1] == "قائمه العام" or MsgText[1]=="قائمة العام" then 
-if not msg.SudoUser then return"ٴ𐄬هذا الامر يخص {المطور} فقط  \n" end
+if not msg.SudoUser then return"𐄬هذا الامر يخص {المطور} فقط  \n" end
 return GetListGeneralBanned(msg) 
 end
 
@@ -1818,7 +1818,7 @@ if MsgText[1] == "رتبتي" then return '↯ رتبتك ←  ( '..msg.TheRank.
 
 ----------------- استقبال الرسائل ---------------
 if MsgText[1] == "الغاء الامر ✖️" or MsgText[1] == "الغاء" then
-if not msg.Admin then return "ٴ𐄬هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
+if not msg.Admin then return "𐄬هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
 redis:del(wegz..'welcom:witting'..msg.sender_user_id_,
 wegz..'rulse:witting'..msg.sender_user_id_,
 wegz..'rulse:witting'..msg.sender_user_id_,
@@ -1838,13 +1838,13 @@ wegz..":ForceSub:"..msg.sender_user_id_,
 wegz..'text_sudo:witting'..msg.sender_user_id_,
 wegz..'addrd:'..msg.chat_id_..msg.sender_user_id_,
 wegz..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
-return 'ٴ𐄬 تم إلغاء الأمر بنجاح .  \n'
+return '𐄬 تم إلغاء الأمر بنجاح .  \n'
 end  
 
 
 if (MsgText[1] ==  'تحديث السورس'  or MsgText[1] ==  'تحديث السورس 🔂' ) then
 if not msg.SudoBase then return "*│*هذا الامر يخص {المطور الاساسي} فقط  \n" end
-local GetVerison = https.request( 'https://raw.githubusercontent.com/ahmedyad200/max/master/GetVersion.txt' ) or 1
+local GetVerison = https.request( 'https://raw.githubusercontent.com/ahmedyad200/max/master/GetVersion.txt' ) or 0
 print(GetVerison.." > "..version)
 if GetVerison > version then
 UpdateSourceStart = true
@@ -1858,7 +1858,7 @@ return false
 end
 
 if MsgText[1] == 'اصدار السورس' or MsgText[1] == 'الاصدار' then
-return 'ٴ𐄬 اصدار سورس ويجز : *v'..version..'* \n'
+return '𐄬 اصدار سورس ويجز : *v'..version..'* \n'
 end
 
 
@@ -1916,8 +1916,8 @@ end
 if (MsgText[1]== "ايدي" or MsgText[1]=="ايديي𖣐") and msg.type == "pv" then return  "\n↯ اهلاً عزيزي المطور ايديك :\n\n↯ "..msg.sender_user_id_.."\n"  end
 
 if MsgText[1]== "قناة السورس" and msg.type == "pv" then
-local inline = {{{text="-قنآهہ‏‏ آلسـورس اضـغـط هـنـآ ",url="https://t.me/SOURCESLENDER"}}}
-send_key(msg.sender_user_id_,'   [قناة سورس : ويجز](https://t.me/SOURCESLENDER)' ,nil,inline,msg.id_)
+local inline = {{{text="-قنآهہ‏‏ آلسـورس اضـغـط هـنـآ ",url="https://t.me/SOURCEwegz"}}}
+send_key(msg.sender_user_id_,'   [قناة سورس : ويجز](https://t.me/SOURCEwegz)' ,nil,inline,msg.id_)
 return false
 end
 
@@ -2092,18 +2092,30 @@ return [[
 ❈↞ ‌‌‏الأوامر ↓
 ——————𖣐𖣐𖣐——————
 ❈↯ م1 ↞ أوامر الاداره.
-𖡨 م2 ↞ أوامر إعدادات المجموعه.
-𖡨 م3 ↞ أوامر الحماية.
-𖡨 م4 ↞ أوامر الخدمه. 
-𖡨 م5 ↞ أوامر التسليه.
-𖡨 م6 ↞ أوامر التعطيل او التفعيل.
-𖡨 م7 ↞ أوامر الوضع للمجموعه.
-𖡨 م المطور ↞  أوامر المطور.
-𖡨 أوامر الرد ↞ لإضافة‌‏ رد معين.
-𖡨 الوسائط ↞ لمعرفة الإعدادات.
-𖡨 الإعدادات ↞ إعدادات المجموعة.
-𖡨 سورس ↞لعرض كليشة سورس البوت.
-𖡨 المطور ↞ لعرض كليشة مطور البوت.
+𑁍‌‏
+❈↯ م2 ↞ أوامر إعدادات المجموعه.
+𑁍‌‌‏
+❈↯ م3 ↞ أوامر الحماية.
+𑁍‌‌‏
+❈↯ م4 ↞ أوامر الخدمه. 
+𑁍‌
+❈↯ م5 ↞ أوامر التسليه.
+𑁍‌
+❈↯ م6 ↞ أوامر التعطيل او التفعيل.
+𑁍‌
+❈↯ م7 ↞ أوامر الوضع للمجموعه.
+𑁍‌
+❈↯ م المطور ↞  أوامر المطور.
+𑁍‌
+❈↯ أوامر الرد ↞ لإضافة‌‏ رد معين.
+𑁍‌
+❈↯ الوسائط ↞ لمعرفة الإعدادات.
+𑁍‌
+❈↯ الإعدادات ↞ إعدادات المجموعة.
+𑁍‌
+❈↯ سورس ↞لعرض كليشة سورس البوت.
+𑁍‌
+❈↯ المطور ↞ لعرض كليشة مطور البوت.
 
 ——————𖣐𖣐𖣐——————
 ↯⌘للتواصل ↞ ✓ ↞{ ]]..SUDO_USER..[[ } ✓ ]]
@@ -2112,20 +2124,20 @@ if MsgText[1]== 'م1' then
 if not msg.Admin then return "↯هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n↯ " end
 local text =[[     
 ❈↞❬أوامر الرفع والتنزيل❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 𖣐↯رفع «» تنزيل ❬منشئ ❭
 𖣐↯رفع «» تنزيل ❬مدير❭ 
 𖣐↯رفع «» تنزيل ❬ادمن❭ 
 𖣐↯رفع «» تنزيل ❬مميز ❭ 
-———————slender—————
+———————wegz—————
 ❈↞❬أوامر المسح❭
-———————slender—————
+———————wegz—————
 𖣐↯مسح الادمنـيـه «» ❬لمسح الادمنيه❭
 𖣐↯مسح المميزين «» ❬لمسح المميزين❭
 𖣐↯ مسح المــــدراء «» ❬لمسح المدراء❭
-———————slender—————
+———————wegz—————
 ❈↞❬أوامر الحظر والطرد والتقييد❭
-———————slender—————
+———————wegz—————
 𖣐↯ حظر ❬بالرد «» بالمعرف❭ لحظر العضو.
 𖣐↯ الغاء الحظر ❬بالرد «» بالمعرف❭ لإلغاء الحظر. 
 𖣐↯ طرد ❬بالرد «» بالمعرف❭ لطرد العضو.
@@ -2135,7 +2147,7 @@ local text =[[
 𖣐↯ فك التقييد ❬بالرد «» بالمعرف❭ لإلغاء تقييد العضو.
 𖣐↯ منع + الكلمة «» لمنع كلمة داخل المجموعة.
 𖣐↯ الغاء منع «» لالغاء منع الكلمة.
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ↯❁ تواصل معي للأستفسار↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2144,7 +2156,7 @@ if MsgText[1]== 'م2' then
 if not msg.Admin then return "↯𖣐هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n↯ " end
 local text = [[
 ❈-❬أوامر الإعدادات❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 𖣐↯ الـرابـط › لعرض ❬الرابط❭ 
 𑁍 
 𖣐↯ انشاء رابط › لإستخراج ❬الرابط❭ 
@@ -2172,7 +2184,7 @@ local text = [[
 𖣐↯ مسح امر + الامر › لمسح❬الأمر المضاف❭
 𑁍
 𖣐↯ قائمـه الاوامر › لمعرفه❬الأوامر المضافه❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ↯✰ معـرف المـطور↤︎↤︎↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2181,7 +2193,7 @@ if MsgText[1]== 'م3' then
 if not msg.Admin then return "↯هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n↯ " end
 local text = [[
 ❈-❬أوامر حماية المجموعة❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 𖣐↯ قفل › فتح ❬الكـــل❭
 𖣐↯ قفل › فتح ❬التـاك❭
 𖣐↯ قفل › فتح ❬الفيـديـــو❭
@@ -2201,15 +2213,15 @@ local text = [[
 𖣐↯ قفل › فتح ❬التوجيــــه❭
 𖣐↯ قفل › فتح ❬الدخول بالرابط❭
 𖣐↯ قفل › فتح ❬البوتات بالطرد❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ❈-❬القفل بالتقييـد❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 𖣐↯ قفل › فتح ❬الــصــــــور بالتقييـد❭
 𖣐↯ قفل › فتح ❬الــروابــط بالتقييـد❭
 𖣐↯ قفل › فتح ❬المتحركه بالتقييـد❭
 𖣐↯ قفل › فتح ❬الفيـــديــو بالتقييد❭
 𖣐↯ قفل › فتح ❬التوجيــه بالتقييــد❭ 
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ✰↯ معـرف المـطور ↤︎↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2219,7 +2231,7 @@ if not msg.Director then return "↯هذا الامر يخص {المطور,ال�
 local text = [[
 
 ❈-❬أوامر الخدمــه❭ 
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ✵ ايـــدي › لعرض صورتك -:- معلوماتك
 𖣐↯ ايدي › لعرض ايديك .
 𑁍
@@ -2254,7 +2266,7 @@ local text = [[
 𖣐↯ طرد البوتات › لطرد كل البوتات.
 𑁍
 𖣐↯ طرد المحذوفين › لطرد الحسابات المحذوفه.
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ✰↯ معـرف المـطور ↤︎ ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2263,10 +2275,10 @@ if MsgText[1]== 'م5' then
 if not msg.Admin then return "↯𖣐هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n↯ " end
 local text =[[
 ❈-❬ أوامر التسلية❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ✵ مرحباً عزيزي
 ❁- إليك أوامر التسليه:
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 𖣐↯ رفع › تنزيل ❬ متوحد ❭
 𖣐↯ رفع › تنزيل ❬ وتكه ❭
 𖣐↯ رفع › تنزيل ❬ غبي ❭
@@ -2276,7 +2288,7 @@ local text =[[
 𖣐↯ رفع › تنزيل ❬ متوحده ❭
 𖣐↯ رفع › ❬ بقلبي ❭ تنزيل › ❬ من قلبي❭
 𖣐↯ ❬ طلاق ❭ › ❬ زواج ❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ✰↯  معـرف المـطور ↤︎ ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2285,7 +2297,7 @@ if MsgText[1]== 'م6' then
 if not msg.Admin then return "↯𖣐هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n↯ " end
 local text = [[     
 ❈-❬ اوامر التفعيل و التعطيل ❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 𖣐↯ تفعيل › تعطيل  ❬ الرفــع ❭
 𖣐↯ تفعيل › تعطيل  ❬ الردود ❭
 𖣐↯ تفعيل › تعطيل  ❬الالعـاب❭
@@ -2293,7 +2305,7 @@ local text = [[
 𖣐↯ تفعيل › تعطيل  ❬ الترحيب ❭
 𖣐↯ تفعيل › تعطيل  ❬ الايدي ❭
 𖣐↯ تفعيل › تعطيل  ❬ الايدي بالصوره ❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ✰↯  معـرف المـطور ↤︎ ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2302,7 +2314,7 @@ if MsgText[1]== 'م7' then
 if not msg.Admin then return "↯𖣐هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n↯ " end
 local text = [[
 ❈-❬ اوامر الوضع للمجموعه ❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 𖣐↯ ضع رابـط › لوضع ❬ رابط ❭
 𑁍
 𖣐↯ ضع اســـم › لوضع ❬ اســم ❭
@@ -2317,7 +2329,7 @@ local text = [[
 𑁍
 𖣐↯ ضع تكرار + العدد › لوضع ❬ تكرار ❭
 
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ✰↯  للتواصل و الإستفسار ↤︎  ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2326,11 +2338,11 @@ if MsgText[1]== "م المطور" then
 if not msg.SudoBase then return "↯ للمطور الاساسي فقط " end
 local text = [[     
 ❈-❬اوامـر المطـور❭ 
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 𖣐↯ تفعيـل › ❬لتفعيل البوت ❭
 𖣐↯ تعطيل › ❬لتعطيل البوت ❭
 𖣐↯ رفع منشئ› ❬رفع منشئ بالبوت❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 𖣐↯ اذاعه › ❬لنشر رساله لكل 
 المجموعات❭
 𑁍
@@ -2348,7 +2360,7 @@ local text = [[
 𖣐↯ تحديث › ❬لتحديث ملفات البوت❭
 𑁍
 𖣐↯ تحديث السورس › ❬لتحديث السورس الى إصدار أحدث❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ✰↯  معـرف المـطور ↤︎ ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2358,7 +2370,7 @@ if MsgText[1]== 'اوامر الرد' then
 if not msg.Director then return "↯𖣐هذا الامر يخص {المطور,المنشئ,المدير,المطور} فقط  \n↯ " end
 local text = [[     
 ❈-❬جميع أوامر الردود ❭
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 𖣐↯ الردود › لعرض الردود المثبته
 𑁍
 𖣐↯ اضف رد › لإضافة رد جديد.
@@ -2374,7 +2386,7 @@ local text = [[
 𖣐↯ مسح رد عام  › لمسح الرد العام. 
 𑁍
 𖣐↯ مسح الردود العامه › لمسح كل ردود العامه.
-——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ✰↯  معـرف المـطور ↤︎ ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
@@ -2856,7 +2868,7 @@ text = [[↯ أهلاً انا بوت   []]..redis:get(wegz..':NameBot:')..[[] �
 𖣐2- ارفع البوت مشرف في المجموعه
 𖣐3- ارسل تفعيل وسيتم تفعيل البوت ورفع مشرفي القررب تلقائياً .
 
-ــــــــــــــــــــــــــــــــ𖣐slender𖣐ـــــــــــــــــــــــــ
+ــــــــــــــــــــــــــــــــ𖣐wegz𖣐ـــــــــــــــــــــــــ
  ↯ مـعـرف الـمـطـــور : ]]..SUDO_USER..[[
 ]]
 else
@@ -2868,7 +2880,7 @@ text = [[↯ أهلاً انا بوت    []]..redis:get(wegz..':NameBot:')..[[] 
 𖣐2- ارفع البوت مشرف في المجموعه
 𖣐③- ارسل تفعيل وسيتم تفعيل البوت ورفع مشرفي القررب تلقائياً .
 
-ـــــــــــــــــــــــــــــــــslenderــــــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــwegzــــــــــــــــــــــــ
  ↯ مـعـرف الـمـطـــور : ]]..SUDO_USER..[[
 ]]
 end
@@ -4029,25 +4041,25 @@ return
 sendMsg(msg.chat_id_,msg.id_,nnn[math.random(#nnn)]) 
 elseif Text== "أحمد" or Text== "أحمد" then return  sendMsg(msg.chat_id_,msg.id_,"[مبرمج ويجز](https://t.me/ahmedyad200)")
 elseif Text== "ملك التلجرام" or Text== "مطور السورس" then return  sendMsg(msg.chat_id_,msg.id_,"[أحمد عياد ♧](https://t.me/ahmedyad200)")
-elseif Text== "رفع غبي"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم رفع الغبي بنجاح↯\nٴ𐄬 تمت إضافته إلى قائمه الأغبياء\n𖣐")
-elseif Text== "تنزيل غبي"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم تنزيل الغبي بنجاح↯\nٴ𐄬 تمت الزاله من قائمه الأغبياء\n𖣐")
-elseif Text== "رفع كلب"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم رفع الكلب بنجاح↯\nٴ𐄬 تمت إضافته إلى قائمه الكلاب\n𖣐")
-elseif Text== "رفع حمار"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم رفع الحمار بنجاح↯\nٴ𐄬 تمت إضافته إلى قائمه الحمير\n𖣐")
-elseif Text== "تنزيل حمار"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم تنزيل الحمار بنجاح↯\nٴ𐄬 تمت ازالته من قائمه الحمير\n𖣐")
-elseif Text== "تنزيل كلب"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي \nٴ𐄬 تم تنزيل الكلب بنجاح↯\nٴ𐄬 تمت إزالته من قائمه الكلاب\n𖣐")
-elseif Text== "تنزيل متوحده"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم تنزيل المتوحده بنجاح↯\nٴ𐄬 لا متحاولوش حتي لو نزلتوها هتفضل متوحده\n𖣐")
-elseif Text== "رفع متوحده"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم رفع المتوحده بنجاح↯\nٴ𐄬 تمت إضافتها الي قائمة المتوحدين والمتخلفين عقلياً\n𖣐")
-elseif Text== "رفع متوحد"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم رفع المتوحد بنجاح↯\nٴ𐄬 تمت  اضافته الي قائمة المتوحديد والمرضي النفسيين\n𖣐")
-elseif Text== "تنزيل متوحد"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم تنزيل المتوحد بنجاح↯\nٴ𐄬 لا متحاولوش حتي لو نزلتوه هيفضل متوحد\n𖣐")
-elseif Text== "رفع بقلبي"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم رفع العضو داخل قلبك↯\nٴ𐄬 تمت ترقيته بنجاح\n𖣐")
-elseif Text== "تنزيل من قلبي"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم تنزيل من داخل قلبك↯\nٴ𐄬 تمت ازالته من قائمه القلوب\n𖣐")
-elseif Text== "رفع وتكه"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم رفع العضو وتكه بنجاح↯ \nٴ𐄬 اصبحت وتكتك\n𖣐")
-elseif Text== "تنزيل وتكه"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم تنزيل العضو \nٴ𐄬 من قائمة وتكاتك بنجاح\n𖣐")
-elseif Text== "رفع زوجتي"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم رفع العضو زوجتك↯\nالآن يمكنكم أخذ راحتكم واتفضلو اعملو واحد\n𖣐")
-elseif Text== "تنزيل زوجتي"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم تنزيل زوجتك بنجاح↯\nالآن انتم مفترقان طلعو بقا \n𖣐")
-elseif Text== "زواج"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 أهلاً عزيزي\nٴ𐄬 تم زواجكم الاثنين بنجاح↯\nٴ𐄬 الآن هي حلالك بلالك\n𖣐")
-elseif Text== "طلاق"  then return sendMsg(msg.chat_id_,msg.id_,"ٴ𐄬 اهلاً عزيزي\nٴ𐄬 تم طلاق الخاينه بنجاح↯\nٴ𐄬 الآن هي مطلقه \n𖣐")
-elseif Text== "اوامر التسليه"  then return sendMsg(msg.chat_id_,msg.id_,"\n‌‌‏ٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬\nٴ𐄬 مرحباً عزيزي\nٴ𐄬 هذي اوامر التسليه:  \nٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬\nٴ𐄬 رفع › تنزيل ❬ متوحد ❭\nٴ𐄬 رفع › تنزيل ❬ وتكه ❭\nٴ𐄬 رفع › تنزيل ❬ غبي ❭\nٴ𐄬 رفع › تنزيل ❬ كلب ❭\nٴ𐄬 رفع › تنزيل ❬ حمار ❭\nٴ𐄬 رفع › تنزيل ❬ زوجتي ❭\nٴ𐄬 رفع › تنزيل ❬ متوحده ❭\nٴ𐄬 رفع › ❬ بقلبي ❭ تنزيل › ❬ من قلبي❭\nٴ𐄬 ❬ طلاق ❭ › ❬ زواج ❭\nٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬ٴ𐄬")
+elseif Text== "رفع غبي"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم رفع الغبي بنجاح↯\n𐄬 تمت إضافته إلى قائمه الأغبياء\n𖣐")
+elseif Text== "تنزيل غبي"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم تنزيل الغبي بنجاح↯\n𐄬 تمت الزاله من قائمه الأغبياء\n𖣐")
+elseif Text== "رفع كلب"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم رفع الكلب بنجاح↯\n𐄬 تمت إضافته إلى قائمه الكلاب\n𖣐")
+elseif Text== "رفع حمار"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم رفع الحمار بنجاح↯\n𐄬 تمت إضافته إلى قائمه الحمير\n𖣐")
+elseif Text== "تنزيل حمار"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم تنزيل الحمار بنجاح↯\n𐄬 تمت ازالته من قائمه الحمير\n𖣐")
+elseif Text== "تنزيل كلب"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي \n𐄬 تم تنزيل الكلب بنجاح↯\n𐄬 تمت إزالته من قائمه الكلاب\n𖣐")
+elseif Text== "تنزيل متوحده"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم تنزيل المتوحده بنجاح↯\n𐄬 لا متحاولوش حتي لو نزلتوها هتفضل متوحده\n𖣐")
+elseif Text== "رفع متوحده"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم رفع المتوحده بنجاح↯\n𐄬 تمت إضافتها الي قائمة المتوحدين والمتخلفين عقلياً\n𖣐")
+elseif Text== "رفع متوحد"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم رفع المتوحد بنجاح↯\n𐄬 تمت  اضافته الي قائمة المتوحديد والمرضي النفسيين\n𖣐")
+elseif Text== "تنزيل متوحد"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم تنزيل المتوحد بنجاح↯\n𐄬 لا متحاولوش حتي لو نزلتوه هيفضل متوحد\n𖣐")
+elseif Text== "رفع بقلبي"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم رفع العضو داخل قلبك↯\n𐄬 تمت ترقيته بنجاح\n𖣐")
+elseif Text== "تنزيل من قلبي"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم تنزيل من داخل قلبك↯\n𐄬 تمت ازالته من قائمه القلوب\n𖣐")
+elseif Text== "رفع وتكه"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم رفع العضو وتكه بنجاح↯ \n𐄬 اصبحت وتكتك\n𖣐")
+elseif Text== "تنزيل وتكه"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم تنزيل العضو \n𐄬 من قائمة وتكاتك بنجاح\n𖣐")
+elseif Text== "رفع زوجتي"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم رفع العضو زوجتك↯\nالآن يمكنكم أخذ راحتكم واتفضلو اعملو واحد\n𖣐")
+elseif Text== "تنزيل زوجتي"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم تنزيل زوجتك بنجاح↯\nالآن انتم مفترقان طلعو بقا \n𖣐")
+elseif Text== "زواج"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 أهلاً عزيزي\n𐄬 تم زواجكم الاثنين بنجاح↯\n𐄬 الآن هي حلالك بلالك\n𖣐")
+elseif Text== "طلاق"  then return sendMsg(msg.chat_id_,msg.id_,"𐄬 اهلاً عزيزي\n𐄬 تم طلاق الخاينه بنجاح↯\n𐄬 الآن هي مطلقه \n𖣐")
+elseif Text== "اوامر التسليه"  then return sendMsg(msg.chat_id_,msg.id_,"\n‌‌‏𐄬𐄬𐄬𐄬𐄬\n𐄬 مرحباً عزيزي\n𐄬 هذي اوامر التسليه:  \n𐄬𐄬𐄬𐄬𐄬\n𐄬 رفع › تنزيل ❬ متوحد ❭\n𐄬 رفع › تنزيل ❬ وتكه ❭\n𐄬 رفع › تنزيل ❬ غبي ❭\n𐄬 رفع › تنزيل ❬ كلب ❭\n𐄬 رفع › تنزيل ❬ حمار ❭\n𐄬 رفع › تنزيل ❬ زوجتي ❭\n𐄬 رفع › تنزيل ❬ متوحده ❭\n𐄬 رفع › ❬ بقلبي ❭ تنزيل › ❬ من قلبي❭\n𐄬 ❬ طلاق ❭ › ❬ زواج ❭\n𐄬𐄬𐄬𐄬𐄬")
 
 
  elseif Text== "ايديي" or Text=="ايدي ☆" then 
@@ -4061,7 +4073,7 @@ elseif Text== "اوامر التسليه"  then return sendMsg(msg.chat_id_,msg.
   return sendMsg(msg.chat_id_,msg.id_,[[
  رابط الحذف في جميع مواقع التواصل ✸
 فكر قبل لا تتسرع وتروح
-ٴ——————𖣐slender𖣐——————
+——————𖣐wegz𖣐——————
 ❆رابط حذف  [Telegram](https://my.telegram.org/auth?to=delete) ܁
 ❆رابط حذف [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
 ❆رابط حذف [Facebook](https://www.facebook.com/help/deleteaccount) ܁
