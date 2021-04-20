@@ -2427,9 +2427,8 @@ return false
 end
 end
 
-
-if MsgText[1] == "رابط حذف" or MsgText[1] == "رابط الحذف" or MsgText[1] == "اريد رابط الحذف" or  MsgText[1] == "بوت حذف" or MsgText[1] == "اريد بوت حذف" then
-local inline = {}
+if MsgText[1] == "رابط حذف" or MsgText[1]=="بوت حذف" then
+local keyboard = {}
 keyboard.inline_keyboard = {
 {{text = 'Telegram',url="https://my.telegram.org/auth?to=delete"},{text = 'BOT Telegram', url="t.me/LC6BOT"}}, 
 {{text = 'instagram', url="https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/"}}, 
@@ -4073,6 +4072,16 @@ elseif Text== "اوامر التسليه"  then return sendMsg(msg.chat_id_,msg.
   SendMention(msg.chat_id_,data.id_,msg.id_,"• اضغط على الايدي ليتم النسخ\n\n "..USERNAME.." ~⪼ ( "..data.id_.." )",37,USERCAR)  
   return false
   end)
+  elseif Text==" " or Text==" " or Text==" " or Text==" " or Text==" " then
+  return sendMsg(msg.chat_id_,msg.id_,[[
+ رابط الحذف في جميع مواقع التواصل ✸
+فكر قبل لا تتسرع وتروح
+——————𖣐wegz𖣐——————
+❆رابط حذف  [Telegram](https://my.telegram.org/auth?to=delete) ܁
+❆رابط حذف [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
+❆رابط حذف [Facebook](https://www.facebook.com/help/deleteaccount) ܁
+❆رابط حذف [Snspchat](https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount) ܁
+  ]] )
   --=====================================
   elseif Text== " احمد" or Text== "  احمد " or Text==" احمد" then
 if msg.SudoUser then  
