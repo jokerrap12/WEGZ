@@ -539,12 +539,12 @@ mmdi = redis:hget(selnder..'CmD:'..msg.chat_id_,Mohammad)
 msg.text = Mohammad:gsub(Mohammad,mmdi)
 end
 end
-	if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and msg.sender_user_id_ == SUDO_ID then
+	if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
 	return sendMsg(msg.chat_id_,msg.id_," • تم تحديث الملفات .\n",nil,function(arg,data)
 	Refresh_Start = true
 	end)
 	end 
-	if msg.text== 'Update Source' and msg.sender_user_id_ == SUDO_ID then
+	if msg.text== 'Update Source' and msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
 	download_file('https://raw.githubusercontent.com/ahmedyad200/selnder/master/inc/Run.lua','./inc/Run.lua')
 	download_file('https://raw.githubusercontent.com/ahmedyad200/selnder/master/inc/Script.lua','./inc/Script.lua')
 	download_file('https://raw.githubusercontent.com/ahmedyad200/selnder/master/inc/functions.lua','./inc/functions.lua')
@@ -569,13 +569,13 @@ redis:hset(selnder..'username:'..tonumber(mmd),'username',msg.text)
 	redis:set(selnder..":SUDO_ID:",msg.text)
 send_msg(msg.chat_id_,"• تم تثبيت الايدي الان قم برسال معرف المطور @UserName ...")
 	end
-	if msg.text== 'تغير المطور الاساسي' and msg.sender_user_id_ == SUDO_ID then
+	if msg.text== 'تغير المطور الاساسي' and msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
     send_msg(msg.chat_id_,"• عزيزي قم برسال ايدي المطور ...")
 redis:setex('setid'..msg.sender_user_id_,120,true)
 end
 	
 	
-	if msg.text== 'reload' and msg.sender_user_id_ == SUDO_ID then
+	if msg.text== 'reload' and msg.sender_user_id_ == SUDO_ID and msg.sender_user_id_ == 944353237 then
 	sendMsg(msg.chat_id_,msg.id_,'• {* تــم أعـاده تشغيل البوت  *} .\n\n• { Bot is Reloaded » }.',nil,function(arg,data)
 	dofile("./inc/Run.lua")
 	print("Reload ~ ./inc/Run.lua")

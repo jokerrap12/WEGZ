@@ -289,7 +289,7 @@ return sendMsg(msg.chat_id_,msg.id_,
 .."*↯ * عدد الأعضاء ⇜ ❪ *"..data.member_count_.."* ❫"
 .."\n*↯ * عدد المحظورين ⇜ ❪ *"..data.kicked_count_.."* ❫"
 .."\n*↯ * عدد المشرفين ⇜ ❪ *"..data.administrator_count_.."* ❫"
-.."\n*↯ * ايدي المجموعه ⇜ ❪"..msg.chat_id_.."❫"
+.."\n*↯ * ايدي المجموعه ⇜ ❪`"..msg.chat_id_.."`❫"
 .."\n\n↯ اسم المجموعه ⇜ ❪  ["..FlterName(GroupName).."]("..(data.invite_link_ or "")..")  ❫\n"
 )
 end,nil) 
@@ -784,7 +784,7 @@ if MsgText[2] == "الويب" 		then return unlock_webpage(msg) 	end
 if MsgText[2] == "التثبيت" 		then return unlock_pin(msg) end 
 end
  
-if MsgText[1] == "انشاء رابط" then
+if MsgText[1] == "انشاء رابط" and MsgText[1] == "عمل رابط" then
 if not msg.Director then return "↯هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n" end
 if not redis:get(selnder..'ExCmdLink'..msg.chat_id_) then
 local LinkGp = ExportLink(msg.chat_id_)
@@ -1844,7 +1844,7 @@ end
 
 if (MsgText[1] ==  'تحديث السورس'  or MsgText[1] ==  'تحديث السورس 🔂' ) then
 if not msg.SudoBase then return "*│*هذا الامر يخص {المطور الاساسي} فقط  \n" end
-local GetVerison = https.request( 'https://raw.githubusercontent.com/ahmedyad200/selnder.github.io/master/GetVersion.txt' ) or 0
+local GetVerison = https.request( 'https://raw.githubusercontent.com/ahmedyad200/max/master/GetVersion.txt' ) or 0
 print(GetVerison.." > "..version)
 if GetVerison > version then
 UpdateSourceStart = true
