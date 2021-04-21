@@ -2106,7 +2106,7 @@ return [[
 𖡨 المطور ↞ لعرض كليشة مطور البوت.
 
 ——————𖡨 𖡨——————
-للتواصل ↞ ✓ ↞{ ]]..SUDO_USER..[[ } ✓ ]]
+مـعـرف الـمـطـور ↞ { ]]..SUDO_USER..[[ } ]]
 end
 if MsgText[1]== 'م1' then
 if not msg.Admin then return "هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n " end
@@ -2136,7 +2136,7 @@ local text =[[
 𖡨 منع + الكلمة «» لمنع كلمة داخل المجموعة.
 𖡨 الغاء منع «» لالغاء منع الكلمة.
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
-❁ تواصل معي للأستفسار↞ ]]..SUDO_USER
+مـعـرف الـمـطـور ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2161,7 +2161,7 @@ local text = [[
 𖡨 مسح امر + الامر › لمسح❬الأمر المضاف❭
 𖡨 قائمـه الاوامر › لمعرفه❬الأوامر المضافه❭
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
-✰ معـرف المـطور↤︎↤︎↞ ]]..SUDO_USER
+مـعـرف الـمـطـور ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2198,7 +2198,7 @@ local text = [[
 𖡨 قفل › فتح ❬الفيـــديــو بالتقييد❭
 𖡨 قفل › فتح ❬التوجيــه بالتقييــد❭ 
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
-✰ معـرف المـطور ↤︎↞ ]]..SUDO_USER
+مـعـرف الـمـطـور ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2227,7 +2227,7 @@ local text = [[
 𖡨 طرد البوتات › لطرد كل البوتات.
 𖡨 طرد المحذوفين › لطرد الحسابات المحذوفه.
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
-✰ معـرف المـطور ↤︎ ↞ ]]..SUDO_USER
+مـعـرف الـمـطـور ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2249,7 +2249,7 @@ local text =[[
 𖡨 رفع › ❬ بقلبي ❭ تنزيل › ❬ من قلبي❭
 𖡨 ❬ طلاق ❭ › ❬ زواج ❭
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
-✰  معـرف المـطور ↤︎ ↞ ]]..SUDO_USER
+مـعـرف الـمـطـور ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2266,7 +2266,7 @@ local text = [[
 𖡨 تفعيل › تعطيل  ❬ الايدي ❭
 𖡨 تفعيل › تعطيل  ❬ الايدي بالصوره ❭
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
-✰  معـرف المـطور ↤︎ ↞ ]]..SUDO_USER
+مـعـرف الـمـطـور ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2284,7 +2284,7 @@ local text = [[
 𖡨 ضع تكرار + العدد › لوضع ❬ تكرار ❭
 
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
-✰  للتواصل و الإستفسار ↤︎  ↞ ]]..SUDO_USER
+مـعـرف الـمـطـور ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2309,7 +2309,7 @@ local text = [[
 𖡨 تحديث › ❬لتحديث ملفات البوت❭
 𖡨 تحديث السورس › ❬لتحديث السورس الى إصدار أحدث❭
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
-✰  معـرف المـطور ↤︎ ↞ ]]..SUDO_USER
+مـعـرف الـمـطـور ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
@@ -2328,7 +2328,7 @@ local text = [[
 𖡨 مسح رد عام  › لمسح الرد العام. 
 𖡨 مسح الردود العامه › لمسح كل ردود العامه.
 ——————𖡨𝗪𝗘𝗚𝗭𖡨——————
-✰  معـرف المـطور ↤︎ ↞ ]]..SUDO_USER
+مـعـرف الـمـطـور ↞ ]]..SUDO_USER
 sendMsg(msg.chat_id_,msg.id_,text)
 return false
 end
