@@ -2427,14 +2427,24 @@ return false
 end
 end
 
+if MsgText[1] == "المبرمج أحمد" then
+return [[
+[أحمد مبرمج سورس ويجز](t.me/ahmedyad200)
+]]
+end
+
+end 
 
 if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
-local keyboard = {}
-keyboard.inline_keyboard = {
-{{text = '𝐶𝐻𝐴𝑁𝑁𝐸𝐿',url="https://t.me/WEGZ_ROB0T"}},
-{{text = '𝘉𝘖𝘛',url="http://t.me/WEGZ_ROBOT?startgroup=start"}},
-}   
-send_inline(msg.chat_id_,  "𝗦𝗢𝗨𝗥𝗖𝗘 𝗪𝗘𝗚𝗭" ,keyboard,'html')
+return [[
+
+👑-𝘚𝘖𝘜𝘙𝘊𝘌 𝘚𝘓𝘌𝘕𝘋𝘌𝘙
+──────────╮
+𖣐-[𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑](t.me/ahmedyad200)
+𖣐-[𝐂𝐇𝐀𝐍𝐍𝐄𝐋](t.me/sowegz)
+𖣐-[𝐓𝐎 𝐓𝐀𝑳𝐊 𝐔𝐒](t.me/ahmedyadbot)
+──────────╯
+]]
 end
 
 
