@@ -1,15 +1,16 @@
-#!/usr/bin/env bash 
+#!/bin/bash 
 
+#    ▀█████████▄   ▄██████▄     ▄████████    ▄████████
+#      ███    ███ ███    ███   ███    ███   ███    ███
+#      ███    ███ ███    ███   ███    █▀    ███    █▀
+#     ▄███▄▄▄██▀  ███    ███   ███          ███
+#    ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3BOSS
+#      ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
+#      ███    ███ ███    ███    ▄█    ███    ▄█    ███
+#    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3BOSS BY @TH3BS
 
-#                                  @AY_AHD
-#   @AY_AHD
-#     
-#                @AY_AHD
-#                                @AY_AHD
-#                                                            @AY_AHD
 #---------------------------------------------------------------------
 cd $(cd $(dirname $0); pwd)
- 
 RED='\033[0;31m'
 SMAY='\033[0;36m' 
 GREEN='\033[0;32m'
@@ -20,33 +21,18 @@ WHITEC='\033[01;91m'
 CNIL='\033[0m'
 Version=`lsb_release -rs | cut -f1 -d"."`
 
-if [ "$Version" == "18" ];then
-echo -e "${GREEN}
-
-                    
-       ▇ @AY_AHD   ▇                     ▄▇▄▄▄▄▄▇▄                            
-    ▄▇                                           ¦ Dev : @AY_AHD
- ▄▇ ¦ Dev : @AY_AHD                    
-                                                               ¦ Source wegz BY @AY_AHD
-----------------------------------------------------------------------${CNIL}"
-echo -e "${RED}| للاسف لايمكنك تنصيب السورس ع نظام اوبنتو {${Version}} يجب ان يكون على اصدار  اقل مثلا  ${SMAY}14 او 16
-${CNIL}";
-echo -e "${RED}| Sorry Canot install Source on Ubuntu {${Version}} Please install system To Ubuntu ${SMAY}14 or 16 ${RED} For Run The Source wegz 
-${CNIL}";
-exit;
-fi
-
 
 if [ ! -f "./TG" ]; then
 echo -e "${RED}
 ¦
 ¦ CAUTION:${WHITB} Your Not Dwonload TG .
-¦ NOW I Run File ${Yellow}./run${WHITB} To install ${SMAY}Source wegz${CNIL} . \n
+¦ NOW I Run File ${Yellow}./run${WHITB} To install ${SMAY}Source TH3BOSS${CNIL} . \n
 \n\n"
 chmod +x ./ins
 ./ins
 exit;
 fi
+
 
 if [ ! -f "./inc/Token.txt" ]; then
 echo -e "${RED}
@@ -56,24 +42,36 @@ echo -e "${RED}
 \n\n"
 lua ./inc/Run.lua
 exit;
-fi
-
-
-TOKEN=`cat ./inc/Token.txt`
-sudo chmod +x ./TG
-
-if [ "$1" == "R" ] ; then
-while(true) do
-killall -q ./TG
-sudo rm -fr ../.telegram-cli
-./TG -s inc/Run.lua --bot=$TOKEN
-done
 else
-
-if ! screen -list | grep -q "wegz"; then
-screen -S wegz ./run R
+TOKEN=`cat ./inc/Token.txt`
+BOTID=`echo $TOKEN | cut -f1 -d":"`
+Sudo=$(redis-cli get ${BOTID}:SUDO_ID:)
+if [[ $Sudo == "" ]]; then
+rm -fr ./inc/Token.txt
+lua ./inc/Run.lua
+exit;
 fi
-screen -S wegz -X kill
-screen -S wegz ./run R
 fi
 
+UserBot=$(redis-cli get ${BOTID}:UserNameBot:)
+
+echo "$Sudo"
+echo "$UserBot"
+
+chmod +x ./TG  
+
+if [ "$1" == "R" ]; then
+while true; do
+sleep 1s
+rm -fr ./MES
+sudo rm -fr ~/.telegram-cli
+./TG -s ./inc/Run.lua --bot=$TOKEN
+done
+else 
+if ! screen -list | grep -q "$UserBot"; then
+screen -S "$UserBot" ./run R
+else
+screen -X -S "$UserBot" quit
+screen -S "$UserBot" ./run R
+fi
+fi
