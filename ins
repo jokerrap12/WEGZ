@@ -4,10 +4,10 @@
 #      ███    ███ ███    ███   ███    ███   ███    ███
 #      ███    ███ ███    ███   ███    █▀    ███    █▀
 #     ▄███▄▄▄██▀  ███    ███   ███          ███
-#    ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @MES
-#      ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
+#    ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @YIY_X0
+#      ███    ██▄ ███    ███          ███          ███ ¦ Dev : @cDDDD
 #      ███    ███ ███    ███    ▄█    ███    ▄█    ███
-#    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source MES BY @TH3BS
+#    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source MES BY @SourceIsrail
 
 #---------------------------------------------------------------------
 cd $(cd $(dirname $0); pwd)
@@ -28,10 +28,10 @@ echo -e " ▀█████████▄   ▄██████▄     ▄�
 echo -e "   ███    ███ ███    ███   ███    ███   ███    ███"
 echo -e "   ███    ███ ███    ███   ███    █▀    ███    █▀"
 echo -e "  ▄███▄▄▄██▀  ███    ███   ███          ███"
-echo -e " ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @MES"
-echo -e "   ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM"
+echo -e " ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @YIY_X0"
+echo -e "   ███    ██▄ ███    ███          ███          ███ ¦ Dev : @cDDDD"
 echo -e "   ███    ███ ███    ███    ▄█    ███    ▄█    ███"
-echo -e " ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source MES BY @TH3BS"
+echo -e " ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source MES BY @SourceIsrail"
 echo -e " ---------------------------------------------------------------------"
 echo -e "${CNIL}"
 
@@ -49,7 +49,7 @@ fi
 PKG_OK=`/usr/bin/dpkg-query --show --showformat='${db:Status-Status}\n' 'redis-server'`
 if [ "${PKG_OK}" == "installed" ]; then
 if [ "$1" == "-R" ] ; then
-GET_INSTALL="NO"
+GET_INSTALL="Yes"
 else
 GET_INSTALL=$(redis-cli get MES_INSTALL)
 fi
@@ -70,7 +70,7 @@ echo -e "\x1B[01;90m\n¦ software-properties-common installing ... \n\x1B[0m"
 sudo apt-get install software-properties-common -y
 echo -e "\x1B[01;90m\n¦ ubuntu-toolchain installing ...\n \x1B[0m"
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-# BY _ [ >> @OMMMM | MOHAMED HISHAM >> @MES ]
+# BY _ [ >> @YIY_X0 |  ISRAILE >> @cDDDD ]
 echo -e "\x1B[01;90m\n¦ install Modiles Pkgs ... \n\n\x1B[0m"
 
 sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y liblua5.2-dev -y lua-socket -y lua-sec -y lua-expat -y libevent-dev -y make unzip git redis-server autoconf g++ -y libjansson-dev -y libpython-dev -y expat libexpat1-dev -y curl -y htop -y wget -y
@@ -114,7 +114,7 @@ echo -e "\x1B[01;90m\n¦ Remove luarocks ... \n\x1B[0m"
 cd .. ;sudo rm -fr ./luarocks*
 echo -e "${WHITB}\n¦ Convert TimeZone To Asia/Baghdad  ... \n${CNIL}"
 sudo timedatectl set-timezone Asia/Baghdad
-cd && cd MES && sudo find . -type f -print0 | xargs -0 chmod +x
+cd && cd ISRAILE && sudo find . -type f -print0 | xargs -0 chmod +x
 echo -e "\n
 ${SMAY}>> Installation ${LSAMAY}Source MES ${SMAY} Completed ^_^ .\n
 Now I Have Information For Your Bot  \n
