@@ -1,5 +1,5 @@
 --[[
-BY @Q11111
+BY @YIY_X0
 #---------------------------------------------------------------------
 ]]
 
@@ -194,7 +194,7 @@ local function iBoss(msg,MsgText)
     sendMsg(arg.ChatID,arg.MsgID,"المالك :\n["..data.title_.."](t.me/"..mmmmm..")")
     end,{ChatID=msg.chat_id_,MsgID=msg.id_,UserName=info.username})
     else
-    sendMsg(msg.chat_id_,msg.id_,'المالك :\n['..info.username..'](t.me/wViiVw)  \n')
+    sendMsg(msg.chat_id_,msg.id_,'المالك :\n['..info.username..'](t.me/WEGZ_ROB0T)  \n')
     end
     
     break
@@ -268,7 +268,7 @@ local function iBoss(msg,MsgText)
     local UserID = data.sender_user_id_
     if UserID == our_id then  
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكن تقييد البوت  \n📛") 
-    elseif UserID == 819385837 or UserID == 970627200  then  
+    elseif UserID == 944353237  then  
     return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك تقييد مطور السورس\n📛") 
     elseif UserID == SUDO_ID then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك تقييد المطور الاساسي\n🛠") 
@@ -309,7 +309,7 @@ local function iBoss(msg,MsgText)
     NameUser = Hyper_Link_Name(data)
     if UserID == our_id then   
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك تقييد البوت\n🛠") 
-    elseif  UserID == 819385837 or UserID == 970627200  then 
+    elseif  UserID == 944353237  then 
     return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك تقييد مطور السورس\n🛠") 
     elseif UserID == SUDO_ID then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك تقييد المطور الاساسي\n🛠") 
@@ -346,7 +346,7 @@ local function iBoss(msg,MsgText)
     UserID =  MsgText[2] 
     if UserID == our_id then   
     return sendMsg(msg.chat_id_,msg.id_,"👤*¦* لا يمكنك تقييد البوت\n🛠") 
-    elseif UserID == "819385837" or UserID == "970627200" then 
+    elseif UserID == "944353237" then 
     return sendMsg(msg.chat_id_,msg.id_,"⚜️*¦* لا يمكنك تقييد مطور السورس\n🛠") 
     elseif UserID == tostring(SUDO_ID) then 
     return sendMsg(msg.chat_id_,msg.id_,"👤*¦* لا يمكنك تقييد المطور الاساسي\n🛠") 
@@ -892,7 +892,7 @@ local function iBoss(msg,MsgText)
     local UserID = data.sender_user_id_
     if UserID == our_id then   
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك طرد البوت\n🛠") 
-    elseif UserID == 819385837 or UserID == 970627200 then 
+    elseif UserID == 944353237 then 
     return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك طرد مطور السورس\n🛠") 
     elseif UserID == SUDO_ID then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك طرد المطور الاساسي\n🛠") 
@@ -931,7 +931,7 @@ local function iBoss(msg,MsgText)
     NameUser = Hyper_Link_Name(data)
     if UserID == our_id then   
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك طرد البوت\n🛠") 
-    elseif UserID == 819385837 or UserID == 970627200 then 
+    elseif UserID == 944353237 then 
     return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك طرد مطور السورس\n🛠") 
     elseif UserID == SUDO_ID then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك طرد المطور الاساسي\n🛠") 
@@ -976,10 +976,10 @@ local function iBoss(msg,MsgText)
     
     if UserID == our_id then   
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
+    elseif UserID == 944353237 then 
+    return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك حظر مطور السورس\n🛠") 
     elseif UserID == SUDO_ID then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور الاساسي\n🛠") 
-    elseif UserID == 819385837 or UserID == 970627200 then 
-    return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك حظر مطور السورس\n🛠") 
     elseif redis:sismember(boss..':SUDO_BOT:',UserID) then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور\n🛠") 
     elseif redis:sismember(boss..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -1025,10 +1025,10 @@ local function iBoss(msg,MsgText)
     
     if UserID == our_id then   
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
+    elseif UserID == 944353237 then 
+    return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك حظر مطور السورس\n🛠") 
     elseif UserID == SUDO_ID then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور الاساسي\n🛠") 
-    elseif UserID == 819385837 or UserID == 970627200 then 
-    return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك حظر مطور السورس\n🛠") 
     elseif redis:sismember(boss..':SUDO_BOT:',UserID) then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور\n🛠") 
     elseif redis:sismember(boss..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -1083,7 +1083,7 @@ local function iBoss(msg,MsgText)
     redis:hset(boss..'username:'..arg.UserID,'username',USERNAME)
     redis:setex(boss..":uploadingsomeon:"..msg.chat_id_..msg.sender_user_id_,500,NameUser)
     redis:setex(boss..":uploadingsomeon2:"..msg.chat_id_..msg.sender_user_id_,500,arg.UserID)
-    sendMsg(arg.ChatID,arg.MsgID,"📇¦  » حسننا الان ارسل صلاحيات المشرف :\n\n¦1- صلاحيه تغيير المعلومات\n¦2- صلاحيه حذف الرسائل\n¦3- صلاحيه دعوه مستخدمين\n¦4- صلاحيه حظر وتقيد المستخدمين \n¦5- صلاحيه تثبيت الرسائل \n¦6- صلاحيه رفع مشرفين اخرين\n\n¦[*]- لرفع كل الصلاحيات ما عدا رفع المشرفين \n¦[**] - لرفع كل الصلاحيات مع رفع المشرفين \n\n🚸¦ يمكنك اختيار الارقام معا وتعيين الكنيه للمشرف في ان واحد مثلا : \n\n¦ 136 الزعيم\n📬") 
+    sendMsg(arg.ChatID,arg.MsgID,"📇¦  » حسننا الان ارسل صلاحيات المشرف :\n\n¦1- صلاحيه تغيير المعلومات\n¦2- صلاحيه حذف الرسائل\n¦3- صلاحيه دعوه مستخدمين\n¦4- صلاحيه حظر وتقيد المستخدمين \n¦5- صلاحيه تثبيت الرسائل \n¦6- صلاحيه رفع مشرفين اخرين\n\n¦[*]- لرفع كل الصلاحيات ما عدا رفع المشرفين \n¦[**] - لرفع كل الصلاحيات مع رفع المشرفين \n\n🚸¦ يمكنك اختيار الارقام معا وتعيين الكنيه للمشرف في ان واحد مثلا : \n\n¦ 136 ويجز\n📬") 
     
     end,{ChatID=arg.ChatID,UserID=UserID,MsgID=arg.MsgID})
     end,{ChatID=msg.chat_id_,MsgID=msg.id_})
@@ -1099,7 +1099,7 @@ local function iBoss(msg,MsgText)
     redis:hset(boss..'username:'..UserID,'username',arg.USERNAME)
     redis:setex(boss..":uploadingsomeon:"..arg.ChatID..msg.sender_user_id_,500,NameUser)
     redis:setex(boss..":uploadingsomeon2:"..arg.ChatID..msg.sender_user_id_,500,UserID)
-    sendMsg(arg.ChatID,arg.MsgID,"📇¦  » حسننا الان ارسل صلاحيات المشرف :\n\n¦1- صلاحيه تغيير المعلومات\n¦2- صلاحيه حذف الرسائل\n¦3- صلاحيه دعوه مستخدمين\n¦4- صلاحيه حظر وتقيد المستخدمين \n¦5- صلاحيه تثبيت الرسائل \n¦6- صلاحيه رفع مشرفين اخرين\n\n¦[*]- لرفع كل الصلاحيات ما عدا رفع المشرفين \n¦[**] - لرفع كل الصلاحيات مع رفع المشرفين \n\n🚸¦ يمكنك اختيار الارقام معا وتعيين الكنيه للمشرف في ان واحد مثلا : \n\n¦ 136 الزعيم\n📬") 
+    sendMsg(arg.ChatID,arg.MsgID,"📇¦  » حسننا الان ارسل صلاحيات المشرف :\n\n¦1- صلاحيه تغيير المعلومات\n¦2- صلاحيه حذف الرسائل\n¦3- صلاحيه دعوه مستخدمين\n¦4- صلاحيه حظر وتقيد المستخدمين \n¦5- صلاحيه تثبيت الرسائل \n¦6- صلاحيه رفع مشرفين اخرين\n\n¦[*]- لرفع كل الصلاحيات ما عدا رفع المشرفين \n¦[**] - لرفع كل الصلاحيات مع رفع المشرفين \n\n🚸¦ يمكنك اختيار الارقام معا وتعيين الكنيه للمشرف في ان واحد مثلا : \n\n¦ 136 ويجز\n📬") 
     end,{ChatID=msg.chat_id_,MsgID=msg.id_,USERNAME=MsgText[2]})
     
     elseif MsgText[2] and MsgText[2]:match('^%d+$') then 
@@ -1210,10 +1210,10 @@ local function iBoss(msg,MsgText)
     local UserID = data.sender_user_id_
     if UserID == our_id then   
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم البوت\n🛠") 
+    elseif UserID == 944353237 then 
+    return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم مطور السورس\n🛠") 
     elseif UserID == SUDO_ID then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم المطور الاساسي\n🛠") 
-    elseif UserID == 819385837 or UserID == 970627200 then 
-    return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم مطور السورس\n🛠") 
     elseif redis:sismember(boss..':SUDO_BOT:',UserID) then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم المطور\n🛠") 
     elseif redis:sismember(boss..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -1249,10 +1249,10 @@ local function iBoss(msg,MsgText)
     NameUser = Hyper_Link_Name(data)
     if UserID == our_id then   
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم البوت\n🛠") 
+    elseif UserID == 944353237 then 
+    return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم مطور السورس\n🛠") 
     elseif UserID == SUDO_ID then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم المطور الاساسي\n🛠") 
-    elseif UserID == 819385837 or UserID == 970627200 then 
-    return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك كتم مطور السورس\n🛠") 
     elseif redis:sismember(boss..':SUDO_BOT:',UserID) then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك كتم المطور\n🛠") 
     elseif redis:sismember(boss..':MONSHA_BOT:'..arg.ChatID,UserID) then 
@@ -2354,7 +2354,7 @@ local function iBoss(msg,MsgText)
     msg = arg.msg
     UserID = msg.UserID
     if UserID == our_id then return sendMsg(msg.chat_id_,msg.id_,"📛*¦* لآ يمكنك تنفيذ الامر مع البوت\n❕") end
-    if UserID == 819385837 or UserID == 970627200 then return sendMsg(msg.chat_id_,msg.id_,"📛*¦* لآ يمكنك تنفيذ الامر ضد مطور السورس \n❕") end
+    if UserID == 944353237 then return sendMsg(msg.chat_id_,msg.id_,"📛*¦* لآ يمكنك تنفيذ الامر مع مطور السورس \n❕") end
     
     if UserID == SUDO_ID then 
     rinkuser = 1
@@ -2453,7 +2453,7 @@ local function iBoss(msg,MsgText)
     if UserID == our_id then return sendMsg(arg.ChatID,arg.MsgID,"📛*¦* لآ يمكنك تنفيذ الامر مع البوت\n❕") end
     
     msg = arg.msg
-    if UserID == 819385837 or UserID == 970627200 then return sendMsg(msg.chat_id_,msg.id_,"📛*¦* لآ يمكنك تنفيذ الامر ضد مطور السورس \n❕") end
+    if UserID == 944353237 then return sendMsg(msg.chat_id_,msg.id_,"📛*¦* لآ يمكنك تنفيذ الامر مع مطور السورس \n❕") end
     NameUser = Hyper_Link_Name(data)
     
     if UserID == SUDO_ID then 
@@ -2647,7 +2647,7 @@ local function iBoss(msg,MsgText)
     
     if msg.SudoBase then
     
-    if MsgText[1] == "نقل ملكيه البوت" or MsgText[1] == "نقل ملكيه البوت 📇" then
+    if MsgText[1] == "نقل ملكيه البوت" or MsgText[1] == "نقل ملكيه البوت 📇" or MsgText[1] == "تفير المطور الاساسي" then
     redis:setex(boss..":Witting_MoveBot:"..msg.chat_id_..msg.sender_user_id_,300,true)
     return "📭¦ حسننا عزيزي  ✋🏿\n🗯¦ الان ارسل معرف المستخدم لنقل ملكية البوت له ."
     end
@@ -2979,7 +2979,7 @@ local function iBoss(msg,MsgText)
     local UserID = data.sender_user_id_
     if UserID == our_id then   
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
-    elseif  UserID == 819385837 or UserID == 970627200 then 
+    elseif  UserID == 944353237 then 
     return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك حظر مطور السورس\n🛠")
     elseif UserID == SUDO_ID then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور الاساسي\n🛠")
@@ -3009,7 +3009,7 @@ local function iBoss(msg,MsgText)
     
     if UserID == our_id then   
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر البوت\n🛠") 
-    elseif  UserID == 819385837 or UserID == 970627200 then 
+    elseif  UserID == 944353237 then 
     return sendMsg(arg.ChatID,arg.MsgID,"⚜️*¦* لا يمكنك حظر مطور السورس\n🛠")
     elseif UserID == SUDO_ID then 
     return sendMsg(arg.ChatID,arg.MsgID,"👤*¦* لا يمكنك حظر المطور الاساسي\n🛠")
@@ -3123,12 +3123,12 @@ local function iBoss(msg,MsgText)
     
     
     if MsgText[1] == 'اصدار السورس' or MsgText[1] == 'الاصدار' then
-    return '👨🏾‍🔧¦ اصدار سورس الزعيم : *v'..version..'* \n📡'
+    return '👨🏾‍🔧¦ اصدار سورس ويجز : *v'..version..'* \n📡'
     end
     
     if (MsgText[1] == 'تحديث السورس' or MsgText[1] == 'تحديث السورس ™') then
     if not msg.SudoBase then return "📪¦ هذا الامر يخص {المطور الاساسي} فقط  \n" end
-    local GetVerison = https.request('https://wViiVw.github.io/GetVersion.txt') or "0"
+    local GetVerison = https.request('https://raw.githubusercontent.com/ahmedyad200/file-wegz/master/GetVersion.txt') or "0"
     GetVerison = GetVerison:gsub("\n",""):gsub(" ","")
     if GetVerison > version then
     UpdateSourceStart = true
@@ -3172,7 +3172,7 @@ local function iBoss(msg,MsgText)
     sendMsg(arg.chat_id_,arg.id_,"📛*¦* عذرا النسخه الاحتياطيه هذا ليست للبوت » ["..Bot_User.."]  \n❕")
     end
     else 
-    sendMsg(arg.chat_id_,arg.id_,'📛*¦* عذرا اسم الملف غير مدعوم للنظام او لا يتوافق مع سورس الزعيم يرجى جلب الملف الاصلي الذي قمت بسحبه وبدون تعديل ع الاسم\n❕')
+    sendMsg(arg.chat_id_,arg.id_,'📛*¦* عذرا اسم الملف غير مدعوم للنظام او لا يتوافق مع سورس ويجز يرجى جلب الملف الاصلي الذي قمت بسحبه وبدون تعديل ع الاسم\n❕')
     end  
     else
     sendMsg(arg.chat_id_,arg.id_,'📛*¦* عذرا الملف ليس بصيغه Json !?\n❕')
@@ -3195,8 +3195,8 @@ local function iBoss(msg,MsgText)
     if (MsgText[1]== "ايدي" or MsgText[1]=="ايدي 🆔") and msg.type == "pv" then return  "\n"..msg.sender_user_id_.."\n"  end
     
     if MsgText[1]== "قناة السورس 📡" and msg.type == "pv" then
-    local inline = {{{text="قنآهہ‏‏ آلسـورس : الـزعـيـم 🍃",url="t.me/wViiVw"}}}
-    send_key(msg.sender_user_id_,'  [قناة السورس : الـزعـيـم](t.me/wViiVw)',nil,inline,msg.id_)
+    local inline = {{{text="قنآهہ‏‏ آلسـورس : ويجز 🍃",url="t.me/WEGZ_ROB0T"}}}
+    send_key(msg.sender_user_id_,'  [قناة السورس : ويـجـز](t.me/WEGZ_ROB0T)',nil,inline,msg.id_)
     return false
     end
     
@@ -3389,7 +3389,7 @@ local function iBoss(msg,MsgText)
     
     
     if MsgText[1]== "مسح رد عشوائي عام" then
-    if not msg.SudoUser then return "📪¦ هذا الامر يخص {المطور} فقط  \n" end
+    if not msg.SudoUser then return "??¦ هذا الامر يخص {المطور} فقط  \n" end
     redis:setex(boss..':DelrdRandomPublic:'..msg.chat_id_..msg.sender_user_id_,300,true)
     return "📭¦ حسننا عزيزي  ✋🏿\n🗯¦ الان ارسل الرد العشوائي العام لمسحها 🍃"
     end
@@ -3478,314 +3478,65 @@ local function iBoss(msg,MsgText)
     
     
     if msg.type == 'channel' and msg.GroupActive then
+	if MsgText[1] == "الاوامر" then
+	if not msg.Admin then return "♦️*│*هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n💥" end
+	local texs = [[  ‌‌‏‌‌‏‌‌‌‌‏                                    
+										 ‌‌‏┄─┅══┅─┄
+	✅ اهلا بك في اوامر البوت 👇
+    📋 للاستفسار - []]..SUDO_USER..[[]
     
+   -  م1 - لعرض اوامر الاداره
+   -  م2 - لعرض اوامر اعدادات المجموعه
+   -  م3 - لعرض اوامر الحماية
+   -  م المطور - لعرض اوامر المطور
+   -  اوامر الرد - لاضافه رد معين
+   - اوامر الملفات - للتحكم في ملفات البوت
+    ♔︙قناة السورس ← @WEGZ_ROB0T
+	 ]]
+	 keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '( ➊ )', callback_data="/help1@"..msg.sender_user_id_},{text = '( ❷ )', callback_data="/help2@"..msg.sender_user_id_},{text = '( ❸ )', callback_data="/help3@"..msg.sender_user_id_},
+},
+{
+{text = '( ❹ )', callback_data="/help4@"..msg.sender_user_id_},{text = '( ❺ )', callback_data="/help5@"..msg.sender_user_id_},
+},
+{
+{text = '( ❻ )', callback_data="/help6@"..msg.sender_user_id_},{text = '( ❼ )', callback_data="/help7@"..msg.sender_user_id_},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request(ApiToken..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(texs).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if MsgText[1]== 'م5' then
+if not msg.Admin then return "♦️*│*هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n💥" end
+local text =[[
+┄─┅══┅─┄
+🤪╿❬ آوآمر التحشيش❭
+🙋🏽‍♂│مرحبآ عزيزي ،
+💯╽إليـك اوامر التحشيش كـ التالي
+┄─┅═ـ═┅─┄
+🤴╿رفع «» تنزيل ❬ تـــاج ❭
+👰│رفع «» تنزيل ❬ مرتي ❭
+🤪│رفع «» تنزيل ❬ اثـول ❭
+🐕│رفع «» تنزيل ❬ جلـب ❭
+🦓│رفع «» تنزيل ❬ مطـي ❭
+🐐│رفع «» تنزيل ❬ صخـل ❭
+🦎│رفع «» تنزيل ❬ زاحف ❭
+❤️│رفع «» ❬ بكلبي ❭ تنزيل «» ❬ من كلبي❭
+🎈╽❬ طلاك ❭ «» ❬ زواج ❭
+┄─┅═ـ═┅─┄
+💭*│* راسلني للاستفسار 💡↭ ]]..SUDO_USER
+sendMsg(msg.chat_id_,msg.id_,text)
+return false
+end
     if msg.SudoBase and (MsgText[1]=="م1" or MsgText[1]=="م2" or MsgText[1]=="م3" or MsgText[1]=="م المطور" or MsgText[1]=="اوامر الرد" or MsgText[1]=="الاوامر" or MsgText[1]=="اوامر الملفات") and redis:get(boss..":Witting_awamr_witting"..msg.chat_id_..msg.sender_user_id_) then 
     redis:del(boss..":Witting_awamr_witting"..msg.chat_id_..msg.sender_user_id_)
     redis:setex(boss..":changawmer:"..msg.chat_id_..msg.sender_user_id_,900,MsgText[1])
     sendMsg(msg.chat_id_,msg.id_,"🔖¦ حسننا لتعيين كليشة الـ *"..MsgText[1].."* \n📮¦ ارسل الكليشه الجديده الان \n\n علما يمكنك استخدام الاختصارات الاتي : \n \n{الاسم} : لوضع اسم المستخدم\n{الايدي} : لوضع ايدي المستخدم\n{المعرف} : لوضع معرف المستخدم \n{الرتبه} : لوضع نوع رتبه المستخدم \n{التفاعل} : لوضع تفاعل المستخدم \n{الرسائل} : لاضهار عدد الرسائل \n{النقاط} : لاضهار عدد النقاط \n{التعديل} : لاضهار عدد السحكات \n{البوت} : لاضهار اسم البوت\n{المطور} : لاضهار معرف المطور الاساسي\n➼")
     return false
     end
-    
-    
-    
-    if MsgText[1] == "الاوامر" then
-    if not msg.Admin then return "📪¦ هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
-    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-    text = [[☑️ اهلا بك في اوامر البوت 👇
-    📨 للاستفسار - []]..SUDO_USER..[[]
-    
-    • م1 - لعرض اوامر الاداره
-    • م2 - لعرض اوامر اعدادات المجموعه
-    • م3 - لعرض اوامر الحماية
-    • م المطور - لعرض اوامر المطور
-    • اوامر الرد - لاضافه رد معين
-    • اوامر الملفات - للتحكم في ملفات البوت
-    🌐︙قناة السورس ← @wViiVw
-    ]]
-    GetUserID(msg.sender_user_id_,function(arg,data)
-    msg = arg.msg
-    local textD = redis:get(boss..":awamer_Klesha_m:")
-    if textD then
-    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-    else
-    textD = text
-    end
-    sendMsg(msg.chat_id_,msg.id_,textD)
-    end,{msg=msg})
-    return false
-    end
-    
-    if MsgText[1]== 'م1' then
-    if not msg.Admin then return "📪¦ هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
-    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-    local text = [[☑️ اهلا بك في قائمة اوامر الاداريين
-    📨 للاستفسار - []]..SUDO_USER..[[]
-    
-    ﹎﹎﹎﹎﹎اوامر الرفع والتنزيل﹎﹎﹎﹎﹎
-    • رفع - تنزيل منشى اساسي
-    • رفع - تنزيل مشرف
-    • رفع - تنزيل منشى
-    • رفع - تنزيل مدير
-    • رفع - تنزيل ادمن
-    • رفع - تنزيل مميز
-    • تنزيل الكل - لأزاله جميع الرتب أعلاه
-    
-    ﹎﹎﹎﹎﹎اوامر المسح﹎﹎﹎﹎﹎
-    • مسح المنشئين الاساسيين
-    • مسح المنشئين
-    • مسح المدراء
-    • مسح الادمنيه
-    • مسح المميزين
-    • مسح المحظورين
-    • مسح المكتومين
-    • مسح قائمه العام
-    • مسح قائمه المنع
-    • مسح الردود العامه
-    • مسح الردود
-    • مسح الاوامر
-    • مسح + عدد
-    • مسح بالرد
-    • مسح ايدي عام
-    • مسح كليشه الايدي
-    • مسح كليشه الستارت
-    • مسح الترحيب
-    • مسح الرابط
-    • مسح كلايش التعليمات
-    
-    ﹎﹎﹎﹎﹎اوامر الطرد الحظر الكتم﹎﹎﹎﹎﹎
-    • حظر - بالرد،بالمعرف،بالايدي
-    • طرد - بالرد،بالمعرف،بالايدي 
-    • كتم - بالرد،بالمعرف،بالايدي
-    • تقيد - بالرد،بالمعرف،بالايدي
-    • الغاء الحظر - بالرد،بالمعرف،بالايدي
-    • الغاء الكتم - بالرد،بالمعرف،بالايدي
-    • فك التقييد - بالرد،بالمعرف،بالايدي
-    • رفع القيود - لحذف ↜ كتم،حظر،حظر عام،تقييد
-    • منع + الكلمه
-    • الغاء منع + الكلمه
-    • طرد البوتات
-    • طرد المحذوفين
-    • كشف البوتات
-    🌐︙قناة السورس ← @wViiVw
-    ]]
-    
-    GetUserID(msg.sender_user_id_,function(arg,data)
-    msg = arg.msg
-    local textD = redis:get(boss..":awamer_Klesha_m1:")
-    if textD then
-    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-    else
-    textD = text
-    end
-    sendMsg(msg.chat_id_,msg.id_,textD)
-    end,{msg=msg})
-    return false
-    end
-    
-    
-    if MsgText[1]== 'م2' then
-    if not msg.Admin then return "📪¦ هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
-    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-    
-    local text = [[☑️ اهلا بك في قائمة اوامر المجموعه
-    📨 للاستفسار - []]..SUDO_USER..[[]
-    
-    ﹎﹎﹎﹎اوامر الوضع ﹎﹎﹎﹎
-    • ضع الترحيب
-    • ضع القوانين
-    • ضع وصف
-    • ضـع رابط
-    • اضف امر
-    • اضف رد عام
-    • تعيين ايدي عام
-    • تعيين كليشه الايدي
-    
-    ﹎﹎﹎﹎اوامر رؤية الاعدادات﹎﹎﹎﹎
-    • المطورين
-    • المنشئين الاساسيين
-    • المنشئين 
-    • الادمنيه
-    • المدراء
-    • المميزين
-    • المحظورين
-    • القوانين
-    • المكتومين
-    • المطور 
-    • معلوماتي 
-    • الحمايه  
-    • الوسائط
-    • الاعدادت
-    • المجموعه
-    🌐︙قناة السورس ← @wViiVw
-     ]]
-    
-    GetUserID(msg.sender_user_id_,function(arg,data)
-    msg = arg.msg
-    local textD = redis:get(boss..":awamer_Klesha_m2:")
-    if textD then
-    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-    else
-    textD = text
-    end
-    sendMsg(msg.chat_id_,msg.id_,textD)
-    end,{msg=msg})
-    return false
-    end
-    
-    if MsgText[1]== 'م3' then
-    if not msg.Admin then return "📪¦ هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n" end
-    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-    
-    local text = [[ ☑️ اهلا بك في قائمة الحماية
-    📨 للاستفسار - []]..SUDO_USER..[[]
-    
-    ﹎﹎﹎ اوامر القفل والفتح بالمسح ﹎﹎﹎
-    • قفل - فتح التعديل  
-    •️ قفل - فتح البصمات 
-    • قفل - فتح الفيديو 
-    • قفل - فتح الـصــور 
-    • قفل - فتح الملصقات 
-    • قفل - فتح المتحركه 
-    
-    • قفل - فتح الدردشه 
-    • قفل - فتح الروابط 
-    • قفل - فتح التاك 
-    • قفل - فتح البوتات 
-    • ️قفل - فتح المعرفات 
-    • قفل - فتح البوتات بالطرد 
-    
-    • قفل - فتح الكلايش 
-    •️ قفل - فتح التكرار 
-    • قفل - فتح التوجيه 
-    • قفل - فتح الانلاين 
-    • قفل - فتح الجهات 
-    • قفل - فتح الــكـــل 
-    
-    • قفل - فتح الفشار
-    • قفل - فتح الفارسيه
-    • قفل - فتح الانكليزيه
-    • قفل - فتح الاضافه
-    • قفل - فتح الصوت
-    • قفل - فتح الالعاب
-    • قفل - فتح الماركدوان
-    • قفل - فتح الويب
-    
-    ﹎﹎﹎﹎اوامر الفتح والقفل بالتقييد﹎﹎﹎
-    • قفل - فتح التوجيه بالتقييد 
-    • قفل - فتح الروابط بالتقييد 
-    • قفل - فتح المتحركه بالتقييد 
-    • قفل - فتح الصور بالتقييد 
-    • قفل - فتح الفيديو بالتقييد 
-    
-    ﹎﹎﹎﹎اوامر التفعيل والتعطيل ﹎﹎﹎﹎
-    • تفعيل - تعطيل الترحيب 
-    • تفعيل - تعطيل الردود 
-    • تفعيل - تعطيل التحذير 
-    • تفعيل - تعطيل الايدي
-    • تفعيل - تعطيل الرابط
-    • تفعيل - تعطيل المغادره
-    • تفعيل - تعطيل الحظر
-    • تفعيل - تعطيل الحمايه
-    • تفعيل - تعطيل تاك للكل
-    • تفعيل - تعطيل الايدي بالصوره
-    • تفعيل - تعطيل التحقق 
-    • تفعيل - تعطيل ردود السورس 
-    • تفعيل - تعطيل التنظيف التلقائي 
-    🌐︙قناة السورس ← @wViiVw
-
-    ]]
-    
-    
-    GetUserID(msg.sender_user_id_,function(arg,data)
-    msg = arg.msg
-    local textD = redis:get(boss..":awamer_Klesha_m3:")
-    if textD then
-    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-    else
-    textD = text
-    end
-    sendMsg(msg.chat_id_,msg.id_,textD)
-    end,{msg=msg})
-    return false
-    end
-    
-    if MsgText[1]== "م المطور" then
-    if not msg.SudoBase then return "🔅¦ للمطور الاساسي فقط  🎖" end
-    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-    
-    local text = [[ ☑️ اهلا بك في قائمة اوامر المطورين
-    📨 للاستفسار - []]..SUDO_USER..[[]
-    
-    • تفعيل
-    • تعطيل
-    • اسم بوتك + غادر
-    • مسح الادمنيه
-    • مسح المميزين
-    • مسح المدراء
-    • مسح المطورين
-    • مسح المنشئين
-    • مسح المنشئين الاساسيين
-    • مسح كلايش التعليمات
-    • اذاعه
-    • اذاعه خاص
-    • اذاعه عام
-    • اذاعه بالتثبيت
-    • اذاعه عام بالتوجيه
-    • تعيين قائمه الاوامر
-    • مسح كلايش التعليمات
-    • تعيين كليشه ستارت
-    • تعيين ايدي عام
-    • مسح ايدي عام
-    • تفعيل / تعطيل تعيين الايدي
-    • تحديث
-    • تحديث السورس 
-    🌐︙قناة السورس ← @wViiVw
-    ]]
-    
-    GetUserID(msg.sender_user_id_,function(arg,data)
-    msg = arg.msg
-    local textD = redis:get(boss..":awamer_Klesha_mtwr:")
-    if textD then
-    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-    else
-    textD = text
-    end
-    sendMsg(msg.chat_id_,msg.id_,textD)
-    end,{msg=msg})
-    return false
-    end
-    
-    if MsgText[1]== 'اوامر الرد' then
-    if not msg.Director then return "📪¦ هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n" end
-    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-    
-    
-    local text = [[ ☑️ اهلا بك في قائمة اوامر الردود
-    📨 للاستفسار - []]..SUDO_USER..[[]
-    
-    •  جميع اوامر الردود 
-    • الردود : لعرض الردود المثبته
-    •  اضف رد : لأضافه رد جديد
-    • مسح رد  الرد المراد مسحه
-    • مسح الردود : لمسح كل الردود
-    •  اضف رد عام : لاضافه رد لكل المجموعات
-    •  مسح رد عام : لمسح الرد العام 
-    • مسح الردود العامه : لمسح كل ردود العامه 
-    🌐︙قناة السورس ← @wViiVw
-    ]]
-    
-    GetUserID(msg.sender_user_id_,function(arg,data)
-    msg = arg.msg
-    local textD = redis:get(boss..":awamer_Klesha_mrd:")
-    if textD then
-    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-    else
-    textD = text
-    end
-    sendMsg(msg.chat_id_,msg.id_,textD)
-    end,{msg=msg})
-    return false
-    end
+   
     
     if MsgText[1]== "اوامر الملفات" then
     if not msg.SudoBase then return"📪¦ هذا الامر يخص {المطور الاساسي} فقط  \n" end
@@ -3798,7 +3549,7 @@ local function iBoss(msg,MsgText)
     •  `/store`  لعرض متجر الملفات 
     •  `sp file.lua`   تثبيت الملف 
     •  `dp file.lua`  الملف المراد حذفه 
-    🌐︙قناة السورس ← @wViiVw
+    🌐︙قناة السورس ← @WEGZ_ROB0T
     ]]
     
     
@@ -3834,13 +3585,18 @@ local function iBoss(msg,MsgText)
     end 
     
     
-    
+--[[    
     if MsgText[1] == "سورس" or MsgText[1]=="السورس" then
     return [[
-    [𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑴𝑬𝑺 𓆪 ](http://t.me/WviivW)
-    ]]
+    ❏ - WELCOME 
+  ⌁⌁⌁⌁⌁ ⌁⌁⌁⌁⌁ ⌁⌁⌁⌁⌁
+ [𓆩 SUORCE ISRAILE 𓆪 ](http://t.me/WEGZ_ROB0T)
+ ⌁⌁⌁⌁⌁ ⌁⌁⌁⌁⌁ ⌁⌁⌁⌁⌁
+ [𓆩 DEV SUORCE 𓆪 ](http://t.me/YIY_X0)
+    ◐◐◐ ◐◐◐ ◐◐◐ ◐◐◐ ◐◐◐
+    ]
     end
-    
+    ]]
     if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
     if not msg.SudoBase then return "📪¦ هذا الامر يخص {المطور الاساسي} فقط  \n" end
     local Get_Files, res = https.request("https://wViiVw.github.io/GetFiles.json")
@@ -3989,11 +3745,9 @@ local function iBoss(msg,MsgText)
     {"ضع اسم للبوت ©","ضع صوره للترحيب 🌄"},
     {"تعطيل التواصل ✖️","تفعيل التواصل 🔛"},
     {"تعطيل تعيين الايدي ⚔️","تفعيل تعيين الايدي ⌨️"},
-    
     {"تعطيل البوت خدمي 🚫","تفعيل البوت خدمي 🔃"},
     {"مسح كليشه الستارت 🗑","تعيين كليشه الستارت 📱"},
     {"مسح كليشه الايدي عام 🗑","تعيين كليشه الايدي عام 📄"},
-    
     {"اذاعه بالتثبيت 📬","تعطيل الاذاعه 🔌","تفعيل الاذاعه 📇"},
     {"اذاعه 🗣","اذاعه عام 📢","اذاعه خاص 👤"},
     {"الملفات 🗂","اذاعه عام بالتوجيه 📣"},
@@ -4449,7 +4203,7 @@ local function iBoss(msg,MsgText)
     .."🗑¦ صلاحيه حذف الرسائل : "..infochange1.."\n"
     .."📬¦ صلاحيه دعوه مستخدمين : "..infochange2.."\n"
     .."🔑¦ صلاحيه حظر وتقيد المستخدمين : "..infochange3.."\n"
-    .."📌¦ صلاحيه تثبيت الرسائل : "..infochange4.."\n"
+    .."??¦ صلاحيه تثبيت الرسائل : "..infochange4.."\n"
     .."📤¦ صلاحيه رفع مشرفين اخرين : "..infochange5.."\n\n"
     .."📋¦ الـكـنـيـة : ["..Nikname.."]\n"
     .."\n✓") 
@@ -5090,7 +4844,7 @@ local function iBoss(msg,MsgText)
     if redis:get(boss..'welcome:get'..msg.chat_id_) then
     if msg.adduserType then
     welcome = (redis:get(boss..'welcome:msg'..msg.chat_id_) or "🔖¦ مرحباً عزيزي\n🔖¦ نورت المجموعة \n💂🏼‍♀️")
-    welcome = welcome:gsub("{القوانين}", redis:get(boss..'rulse:msg'..msg.chat_id_) or "🔖¦ مرحبأ عزيري 👋🏻 القوانين كلاتي 👇🏻\n🔖¦ ممنوع نشر الروابط \n🔖¦ ممنوع التكلم او نشر صور اباحيه \n🔖¦ ممنوع  اعاده توجيه \n🔖¦ ممنوع التكلم بلطائفه \n🔖¦ الرجاء احترام المدراء والادمنيه 😅\n")
+    welcome = welcome:gsub("{القوانين}", redis:get(boss..'rulse:msg'..msg.chat_id_) or "🔖¦ مرحبأ عزيري 👋🏻 القوانين كلاتي 👇🏻\n🔖¦ ممنوع نشر الروابط \n🔖¦ ممنوع التكلم او نشر صور اباحيه \n🔖¦ ممنوع  اعاده توجيه \n🔖¦ ممنوع التكلم بلطائفه \n??¦ الرجاء احترام المدراء والادمنيه 😅\n")
     if msg.addusername then UserName = '@'..msg.addusername else UserName = '< لا يوجد معرف >' end
     local edited = (redis:get(boss..':edited:'..msg.chat_id_..':'..msg.adduser) or 0)
     local points = redis:get(boss..':User_Points:'..msg.chat_id_..msg.adduser) or 0
