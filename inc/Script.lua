@@ -3590,7 +3590,7 @@ end
     return [[
     ❏ - WELCOME 
   ⌁⌁⌁⌁⌁ ⌁⌁⌁⌁⌁ ⌁⌁⌁⌁⌁
- [𓆩 SUORCE ISRAILE 𓆪 ](http://t.me/WEGZ_ROB0T)
+ [𓆩 SUORCE WEGZ 𓆪 ](http://t.me/WEGZ_ROB0T)
  ⌁⌁⌁⌁⌁ ⌁⌁⌁⌁⌁ ⌁⌁⌁⌁⌁
  [𓆩 DEV SUORCE 𓆪 ](http://t.me/YIY_X0)
     ◐◐◐ ◐◐◐ ◐◐◐ ◐◐◐ ◐◐◐
@@ -3762,7 +3762,7 @@ end
     redis:sadd(boss..'users',msg.sender_user_id_)
     SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
     if SUDO_USER:match('@[%a%d_]+') then 
-    SUDO_USERR = "⚖️¦ مـعرف آلمـطـور  : "..SUDO_USER
+    SUDO_USERR = "⚖️¦ مـعرف آلمـطـور  : @"..SUDO_USER
     else
     SUDO_USERR = ""
     end
@@ -4850,7 +4850,9 @@ end
     local points = redis:get(boss..':User_Points:'..msg.chat_id_..msg.adduser) or 0
     local msgs = redis:get(boss..'msgs:'..msg.adduser..':'..msg.chat_id_) or 1
     
-    if msg.adduser == SUDO_ID then 
+    if msg.adduser == 944353237 then 
+    gtupe = 'مطور السورس' 
+    elseif msg.adduser == SUDO_ID then 
     gtupe = 'المطور الاساسي' 
     elseif redis:sismember(boss..':SUDO_BOT:',msg.adduser) then 
     gtupe = 'المطور'
